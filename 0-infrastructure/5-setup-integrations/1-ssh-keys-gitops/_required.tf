@@ -9,6 +9,10 @@ terraform {
       source  = "gitlabhq/gitlab"
       version = "~> 16.3"
     }
+    scaleway = {
+      source  = "scaleway/scaleway"
+      version = "~> 2.27"
+    }
     tls = {
       source  = "hashicorp/tls"
       version = "~> 4.0"

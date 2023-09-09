@@ -24,5 +24,9 @@
 - terraform
 - terragrunt
 
+## ➤ Tools <a name="#-tools"></a>
+
+- https://forum.gitlab.com/t/deploy-keys-api-needs-admin-access/34814/6
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- END_TF_DOCS -->

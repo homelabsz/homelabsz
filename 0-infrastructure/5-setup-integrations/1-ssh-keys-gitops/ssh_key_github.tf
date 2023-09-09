@@ -17,3 +17,25 @@ resource "github_user_ssh_key" "gitops" {
   title = "GitOps GitHub ArgoCD SSH-Key"
   key   = tls_private_key.ssh_key_github.public_key_openssh
 }
+
+resource "scaleway_secret" "ssh_key_github_private" {
+  name        = "ssh_key_github_private"
+  description = "GitOps GitHub ArgoCD SSH-Key private"
+  tags        = ["terraform"]
+}
+
+resource "scaleway_secret_version" "ssh_key_github_private" {
+  secret_id = scaleway_secret.ssh_key_github_private.id
+  data      = tls_private_key.ssh_key_github.private_key_openssh
+}
+
+resource "scaleway_secret" "ssh_key_github_public" {
+  name        = "ssh_key_github_public"
+  description = "GitOps GitHub ArgoCD SSH-Key public"
+  tags        = ["terraform"]
+}
+
+resource "scaleway_secret_version" "ssh_key_github_public" {
+  secret_id = scaleway_secret.ssh_key_github_public.id
+  data      = tls_private_key.ssh_key_github.public_key_openssh
+}
