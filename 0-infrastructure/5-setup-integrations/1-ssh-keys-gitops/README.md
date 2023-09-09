@@ -61,5 +61,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ssh_key_github"></a> [ssh\_key\_github](#output\_ssh\_key\_github) | Output SSH Key GitHub |
-| <a name="output_ssh_key_gitlab"></a> [ssh\_key\_gitlab](#output\_ssh\_key\_gitlab) | Output SSH Key GitLab |
+| <a name="output_ssh_key_github"></a> [ssh\_key\_github](#output\_ssh\_key\_github) | Output with some information about SSH Key created to GitHub |
+| <a name="output_ssh_key_gitlab"></a> [ssh\_key\_gitlab](#output\_ssh\_key\_gitlab) | Output with some information about SSH Key created to GitLab |

@@ -5,7 +5,7 @@ output "ssh_key_github" {
       url = github_user_ssh_key.gitops.url
     }
   }
-  description = "Output SSH Key GitHub"
+  description = "Output with some information about SSH Key created to GitHub"
 }
 
 output "ssh_key_gitlab" {
@@ -15,5 +15,5 @@ output "ssh_key_gitlab" {
       deploy_key_id = gitlab_deploy_key.gitops.deploy_key_id
     }
   }
-  description = "Output SSH Key GitLab"
+  description = "Output with some information about SSH Key created to GitLab"
 }
