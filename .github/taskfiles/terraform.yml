@@ -1,0 +1,42 @@
+---
+version: "3"
+
+tasks:
+  init:
+    desc: Run Terraform init command
+    preconditions:
+    - sh: "which terraform"
+      msg: "terraform {{ .PATH_ERROR }}"
+    cmds:
+    - terraform -chdir={{ .PWD }} init --upgrade
+
+  validate:
+    desc: Run Terraform validate command
+    cmds:
+    - terraform -chdir={{ .PWD }} validate
+
+  fmt:
+    desc: Run Terraform fmt command
+    cmds:
+    - terraform -chdir={{ .PWD }} fmt -recursive
+
+  lint:
+    desc: Run tflint tool
+    cmds:
+    - tflint --chdir={{ .PWD }} --config={{ .GIT_ROOT }}/.github/config/.tflint.hcl
+
+  docs:
+    desc: Generate terraform documentation
+    cmds:
+    - cd {{ .PWD }}
+    - terraform-docs markdown -c {{ .GIT_ROOT }}/.github/config/.terraform-docs.yml --output-file README.md .
+    - cd .
+
+  all:
+    desc: Run all necessary commands to configure, verify and create docs to terraform
+    cmds:
+    - task: init
+    - task: validate
+    - task: fmt
+    - task: lint
+    - task: docs

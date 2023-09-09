@@ -1,0 +1,16 @@
+---
+echo-server:
+  replicaCount: 1
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: echo-server.lpsm.dev
+    hosts:
+      - host: echo-server.lpsm.dev
+        paths:
+          - /
+    tls:
+      - hosts:
+          - echo-server.lpsm.dev
+        secretName: echo-server-tls-ingress

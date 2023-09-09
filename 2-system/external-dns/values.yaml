@@ -1,0 +1,20 @@
+---
+external-dns:
+  policy: sync
+  sources: ["crd", "ingress", "service"]
+  provider: cloudflare
+  domainFilters: ["lpsm.dev"]
+  extraArgs:
+    - --ingress-class=nginx
+    - --cloudflare-proxied
+  env:
+    - name: CF_API_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: cloudflare-secret-properties
+          key: cloudflare_api_token
+    - name: CF_API_EMAIL
+      valueFrom:
+        secretKeyRef:
+          name: cloudflare-secret-properties
+          key: cloudflare_email

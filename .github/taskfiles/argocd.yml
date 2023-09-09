@@ -1,0 +1,11 @@
+---
+version: "3"
+
+tasks:
+  get-admin-password:
+    desc: Get argocd admin password
+    cmds:
+    - |
+      ADMIN_PASSWORD=`kubectl get secret argocd-initial-admin-secret -o jsonpath='{.data.password}' -n argocd | base64 -d;echo`
+      echo "Argo admin password: $ADMIN_PASSWORD. Login in argo with cli using admin credentials..."
+      argocd login $ARGO_URL --username admin --password $ADMIN_PASSWORD --insecure --grpc-web

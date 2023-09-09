@@ -1,0 +1,32 @@
+---
+version: "3"
+
+tasks:
+  ns-cleanup:
+    desc: Force terminate all namespaces stuck with finalizers in Kubernetes
+    cmds:
+    - |
+      function ns_cleanup {
+      declare -a terminating=( \
+        $(kubectl get ns -o json | \
+          jq '.items[] | select(.status.phase=="Terminating") | (.metadata.name)' | \
+          xargs -n1) \
+          )
+      for ns in "${terminating[@]}"; do
+        echo "$ns"
+        kubectl get ns "$ns"  -o json | \
+          jq '.spec.finalizers = []' | \
+          kubectl replace --raw "/api/v1/namespaces/$ns/finalize" -f -
+      done
+      unset terminating
+      }
+      ns_cleanup
+
+  get-dns:
+    desc: Return all ingress's created in Kubernetes
+    cmds:
+    - |
+      kubectl get ingress \
+        --all-namespaces \
+        --no-headers \
+        --output custom-columns="ADDRESS:.status.loadBalancer.ingress[0].ip,HOST:.spec.rules[0].host"

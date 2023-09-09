@@ -1,0 +1,34 @@
+---
+gitops:
+  repo: git@github.com:homelabsz/homelabsz.git
+  revision: main
+
+# List of application corresponding to different sync waves
+apps:
+# CDRs App
+- name: crds
+  path: 1-bootstrap/crds
+  extraSyncOptions:
+  - Replace=true
+# ArgoCD App-of-Apps
+- name: app-of-apps
+  namespace: argocd
+  path: 1-bootstrap/app-of-apps
+  extraSyncOptions:
+  - Replace=true
+# Ingress Nginx
+- name: ingress-nginx
+  namespace: nginx-ingress
+  path: 2-system/ingress-nginx
+  extraSyncOptions:
+  - CreateNamespace=true
+  - ServerSideApply=true
+  - ApplyOutOfSyncOnly=true
+# External Secrets
+- name: external-secrets
+  namespace: external-secrets
+  path: 2-system/external-secrets
+  extraSyncOptions:
+  - CreateNamespace=true
+  - ServerSideApply=true
+  - ApplyOutOfSyncOnly=true

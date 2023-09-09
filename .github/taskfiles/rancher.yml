@@ -1,0 +1,30 @@
+---
+version: "3"
+
+vars:
+  RANCHER_VERSION: "latest"
+
+tasks:
+  init:
+    desc: Initialize rancher container
+    preconditions:
+    - sh: "which docker"
+      msg: "docker {{.PATH_ERROR}}"
+    cmds:
+    - |
+      docker run -d --restart=unless-stopped \
+        --name=rancher -p 80:80 -p 443:443 \
+        --privileged rancher/rancher:{{ .RANCHER_VERSION }}
+
+  get-password:
+    desc: Get rancher password
+    cmds:
+    - |
+      docker logs $(docker ps -aqf "name=rancher") 2>&1 | grep "Bootstrap Password:"
+
+  delete:
+    desc: Delete rancher container
+    cmds:
+    - |
+      docker stop rancher
+      docker rm rancher

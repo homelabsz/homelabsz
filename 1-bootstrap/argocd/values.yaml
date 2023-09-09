@@ -1,0 +1,53 @@
+---
+argo-cd:
+  crds:
+    install: true
+  global:
+    logging:
+      format: json
+      level: info
+  configs:
+    cm:
+      exec.enabled: true
+      admin.enabled: true
+      timeout.reconciliation: 15s
+      statusbadge.enabled: true
+    rbac:
+      create: true
+      policy.default: role:readonly
+      policy.csv: |
+        p, role:org-admin, applications, *, */*, allow
+        p, role:org-admin, clusters, get, *, allow
+        p, role:org-admin, repositories, get, *, allow
+        p, role:org-admin, repositories, create, *, allow
+        p, role:org-admin, repositories, update, *, allow
+        p, role:org-admin, repositories, delete, *, allow
+        p, role:org-admin, projects, get, *, allow
+        p, role:org-admin, projects, create, *, allow
+        p, role:org-admin, projects, update, *, allow
+        p, role:org-admin, projects, delete, *, allow
+        p, role:org-admin, logs, get, *, allow
+        p, role:org-admin, exec, create, */*, allow
+  controller:
+    replicas: 2
+  server:
+    replicas: 2
+    extraArgs:
+    - --insecure
+    config:
+      kustomize.buildOptions: "--enable-alpha-plugins"
+    ingress:
+      enabled: true
+      ingressClassName: "nginx"
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: argo-cd.lpsm.dev
+      hosts:
+      - argo-cd.lpsm.dev
+  repoServer:
+    replicas: 2
+  applicationSet:
+    replicaCount: 2
+  dex:
+    enabled: false
+  redis-ha:
+    enabled: true

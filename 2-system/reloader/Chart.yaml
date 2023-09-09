@@ -1,0 +1,10 @@
+---
+apiVersion: v2
+name: reloader
+description: A helm chart for an app
+type: application
+version: 0.1.0
+dependencies:
+- name: reloader
+  version: 1.0.38
+  repository: https://stakater.github.io/stakater-charts

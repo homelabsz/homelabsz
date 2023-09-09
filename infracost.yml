@@ -1,0 +1,6 @@
+version: 0.1
+projects:
+- path: ./0-infrastructure/1-setup-network
+  name: 1-setup-network
+- path: ./0-infrastructure/4-setup-instances
+  name: 2-rancher

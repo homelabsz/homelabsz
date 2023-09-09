@@ -1,0 +1,39 @@
+{{- range $index, $app := .Values.apps }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $app.name }}
+  namespace: {{ $.Release.Namespace }}
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: {{ default "default" $app.project }}
+  source:
+    repoURL: {{ $.Values.gitops.repo }}
+    targetRevision: {{ $.Values.gitops.revision }}
+    path: {{ $app.path }}
+  destination:
+    server: {{ $app.server | default "https://caas.nuageit.com.br/k8s/clusters/c-ftp9n" }}
+    namespace: {{ $app.namespace }}
+  syncPolicy:
+    automated:
+      prune: {{ default "true" $app.prune }}
+      allowEmpty: {{ default "true" $app.allowEmpty }}
+      selfHeal: {{ default "true" $app.selfHeal }}
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+    syncOptions:
+    {{- with $app.extraSyncOptions }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- with $app.ignoreDifferences }}
+  ignoreDifferences:
+    {{- toYaml . | nindent 2 }}
+  {{- end }}
+---
+{{ end }}

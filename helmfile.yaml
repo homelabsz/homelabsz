@@ -1,0 +1,78 @@
+---
+helmDefaults:
+  kubeContext: scalaway-personal-pocs-services-001
+---
+repositories:
+- name: argo-cd
+  url: https://argoproj.github.io/argo-helm
+- name: cert-manager
+  url: https://charts.jetstack.io
+- name: descheduler
+  url: https://kubernetes-sigs.github.io/descheduler
+- name: external-dns
+  url: https://kubernetes-sigs.github.io/external-dns
+- name: echo-server
+  url: https://ealenn.github.io/charts
+- name: ingress-nginx
+  url: https://kubernetes.github.io/ingress-nginx
+- name: reloader
+  url: https://stakater.github.io/stakater-charts
+---
+releases:
+# Setup Descheduler
+- name: descheduler
+  namespace: kube-system
+  chart: ./2-system/descheduler
+  createNamespace: true
+# Setup Reloader
+- name: reloader
+  namespace: reloader
+  chart: ./2-system/reloader
+  createNamespace: true
+# Setup External Secrets
+- name: external-secrets
+  namespace: external-secrets
+  chart: ./2-system/external-secrets
+  createNamespace: true
+- name: external-secrets-scaleway
+  namespace: external-secrets
+  chart: ./2-system/external-secrets-scaleway
+  createNamespace: true
+  needs:
+  - external-secrets
+# Setup Cert Manager
+- name: cert-manager
+  namespace: cert-manager
+  chart: ./2-system/cert-manager
+  createNamespace: true
+- name: cert-manager-cloudflare
+  namespace: cert-manager
+  chart: ./2-system/cert-manager-cloudflare
+  createNamespace: true
+  needs:
+  - cert-manager
+# Setup Network
+- name: ingress-nginx
+  namespace: ingress-nginx
+  chart: ./2-system/ingress-nginx
+  createNamespace: true
+  needs:
+  - cert-manager/cert-manager
+- name: external-dns
+  namespace: external-dns
+  chart: ./2-system/external-dns
+  createNamespace: true
+  needs:
+  - external-secrets/external-secrets
+# Setup ArgoCD
+- name: argocd
+  namespace: argocd
+  chart: ./1-bootstrap/argocd
+  createNamespace: true
+  needs:
+  - external-secrets/external-secrets
+# Setup Apps
+- name: echo-server
+  namespace: demo
+  chart: ./4-apps/echo-server
+  createNamespace: true

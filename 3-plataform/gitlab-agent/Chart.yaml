@@ -1,0 +1,10 @@
+---
+apiVersion: v2
+name: gitlab-agent
+description: A helm chart for an app
+type: application
+version: 0.1.0
+dependencies:
+- name: gitlab-agent
+  version: 1.18.0
+  repository: https://charts.gitlab.io

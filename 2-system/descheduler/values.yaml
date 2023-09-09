@@ -1,0 +1,29 @@
+---
+descheduler:
+  kind: Deployment
+  cronJobApiVersion: "batch/v1"
+  deschedulingInterval: 1m
+  deschedulerPolicyAPIVersion: "descheduler/v1alpha1"
+  deschedulerPolicy:
+    strategies:
+      RemoveDuplicates:
+        enabled: true
+      RemovePodsHavingTooManyRestarts:
+        enabled: true
+        params:
+          podsHavingTooManyRestarts:
+            podRestartThreshold: 10
+            includingInitContainers: true
+      RemoveFailedPods:
+        enabled: true
+        params:
+          failedPods:
+            includingInitContainers: true
+            excludeOwnerKinds: ["Job"]
+            minPodLifetimeSeconds: 3600
+      LowNodeUtilization:
+        enabled: false
+    service:
+      enabled: true
+    serviceMonitor:
+      enabled: true
