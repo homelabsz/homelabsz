@@ -89,3 +89,6 @@ terraform.rc
 
 tfsec.test.xml
 .terraform.lock.hcl
+
+.infracost/
+infracost.lock
