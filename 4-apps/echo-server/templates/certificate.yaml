@@ -3,6 +3,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: echo-server-crt
+  namespace: demo
 spec:
   secretName: echo-server-tls
   dnsNames:
