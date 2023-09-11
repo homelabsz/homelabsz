@@ -24,9 +24,21 @@ No modules.
 | [null_resource.context](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [null_resource.rancher](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [rancher2_cluster.pocs_services](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/cluster) | resource |
+| [rancher2_namespace.argocd](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
+| [rancher2_namespace.demo](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
+| [rancher2_namespace.external_dns](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
+| [rancher2_namespace.external_secrets](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
+| [rancher2_namespace.gitlab_runner](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
+| [rancher2_namespace.kubernetes_replicator](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
+| [rancher2_namespace.monitoring](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
+| [rancher2_namespace.origin_ca_issuer](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
+| [rancher2_namespace.reloader](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
+| [rancher2_namespace.sonarqube](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/namespace) | resource |
 | [rancher2_project.devops](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/project) | resource |
-| [rancher2_project.homelad](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/project) | resource |
+| [rancher2_project.gitops](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/project) | resource |
+| [rancher2_project.homelab](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/project) | resource |
 | [rancher2_project.monitoring](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/resources/project) | resource |
+| [rancher2_project.system](https://registry.terraform.io/providers/rancher/rancher2/latest/docs/data-sources/project) | data source |
 
 ## Inputs
 

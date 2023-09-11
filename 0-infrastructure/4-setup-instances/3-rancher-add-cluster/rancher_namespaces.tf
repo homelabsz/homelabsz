@@ -9,6 +9,16 @@ resource "rancher2_namespace" "reloader" {
   project_id = rancher2_project.devops.id
 }
 
+resource "rancher2_namespace" "kubernetes_replicator" {
+  name = "kubernetes-replicator"
+  project_id = rancher2_project.devops.id
+}
+
+resource "rancher2_namespace" "sonarqube" {
+  name = "sonarqube"
+  project_id = rancher2_project.devops.id
+}
+
 # GitOps
 resource "rancher2_namespace" "argocd" {
   name = "argocd"
@@ -35,5 +45,10 @@ resource "rancher2_namespace" "external_dns" {
 
 resource "rancher2_namespace" "external_secrets" {
   name = "external-secrets"
+  project_id = data.rancher2_project.system.id
+}
+
+resource "rancher2_namespace" "origin_ca_issuer" {
+  name = "origin-ca-issuer"
   project_id = data.rancher2_project.system.id
 }

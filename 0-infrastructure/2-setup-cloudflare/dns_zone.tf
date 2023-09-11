@@ -10,6 +10,7 @@ resource "cloudflare_zone_settings_override" "lpsm_dev" {
   zone_id = cloudflare_zone.lpsm_dev.id
 
   settings {
+    always_online            = "off"
     always_use_https         = "on"
     automatic_https_rewrites = "on"
     brotli                   = "on"
@@ -17,6 +18,7 @@ resource "cloudflare_zone_settings_override" "lpsm_dev" {
     challenge_ttl            = 1800
     development_mode         = "off"
     email_obfuscation        = "on"
+    hotlink_protection       = "on"
     ip_geolocation           = "on"
     opportunistic_encryption = "on"
     min_tls_version          = "1.2"
@@ -30,6 +32,9 @@ resource "cloudflare_zone_settings_override" "lpsm_dev" {
       enabled = true
     }
     ssl        = "full"
-    visitor_ip = "on"
   }
+
+  depends_on = [
+    cloudflare_record.blog
+  ]
 }
