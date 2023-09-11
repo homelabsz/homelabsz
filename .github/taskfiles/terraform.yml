@@ -40,3 +40,8 @@ tasks:
     - task: fmt
     - task: lint
     - task: docs
+
+  image:
+    desc: Run terragrunt to generate svg image
+    cmds:
+    - terragrunt graph-dependencies --terragrunt-working-dir=0-infrastructure | dot -Tsvg > .github/images/infrastructure.svg
