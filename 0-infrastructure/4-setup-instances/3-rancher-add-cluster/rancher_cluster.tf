@@ -5,7 +5,7 @@ resource "rancher2_cluster" "pocs_services" {
 
 resource "null_resource" "context" {
   triggers = {
-    timestamp = "${timestamp()}"
+    id = rancher2_cluster.pocs_services.id
   }
   provisioner "local-exec" {
     command     = "kubectl kc switch ${var.kubeconfig_context_name} >/dev/null 2>&1"
@@ -15,7 +15,7 @@ resource "null_resource" "context" {
 
 resource "null_resource" "rancher" {
   triggers = {
-    timestamp = "${timestamp()}"
+    id = rancher2_cluster.pocs_services.id
   }
   provisioner "local-exec" {
     command     = tolist(rancher2_cluster.pocs_services.cluster_registration_token)[0].command
