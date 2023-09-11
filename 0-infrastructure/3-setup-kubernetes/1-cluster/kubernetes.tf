@@ -47,7 +47,7 @@ resource "null_resource" "kubeconfig" {
     timestamp = "${timestamp()}"
   }
   provisioner "local-exec" {
-    command     = "chmod +x ${path.module}/files/add_cluster; ${path.module}/files/add_cluster"
+    command     = "chmod +x ${path.module}/files/add_kubeconfig; ${path.module}/files/add_kubeconfig"
     interpreter = ["bash", "-c"]
   }
   lifecycle {
