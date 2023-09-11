@@ -17,4 +17,4 @@ echo-server:
     tls:
       - hosts:
           - echo-server.lpsm.dev
-        secretName: echo-server-tls
+        secretName: echo-tls
