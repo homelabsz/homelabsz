@@ -1,5 +1,5 @@
 provider "gitlab" {
-  base_url = "https://gitlab.com/api/v4/"
   token    = var.gitlab_token
+  base_url = var.gitlab_url
   insecure = false
 }

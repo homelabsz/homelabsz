@@ -4,6 +4,10 @@ resource "cloudflare_zone" "lpsm_dev" {
   jump_start = false
   plan       = "free"
   type       = "full"
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "cloudflare_zone_settings_override" "lpsm_dev" {
