@@ -22,6 +22,20 @@ variable "organization_id" {
   default     = ""
 }
 
+variable "access_key" {
+  type        = string
+  description = "Scaleway access key"
+  default     = ""
+  sensitive   = true
+}
+
+variable "secret_key" {
+  type        = string
+  description = "Scaleway secret key"
+  default     = ""
+  sensitive   = true
+}
+
 variable "rancher_version" {
   type        = string
   description = "Rancher version"
@@ -46,4 +60,3 @@ variable "cloudflare_api_token" {
   default     = ""
   sensitive   = true
 }
-

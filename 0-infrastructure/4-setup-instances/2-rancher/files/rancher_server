@@ -12,6 +12,8 @@ elif [ `command -v wget` ]; then
     wget -qO- https://releases.rancher.com/install-docker/${docker_version_server}.sh | sh
 fi
 
+curl -s https://raw.githubusercontent.com/scaleway/scaleway-cli/master/scripts/get.sh | sh
+
 for image in $curlimage $jqimage "rancher/rancher:${rancher_version}"; do
     until docker inspect $image > /dev/null 2>&1; do
         docker pull $image && sleep 2
@@ -67,3 +69,28 @@ done
 
 # Configure server-url
 docker run --rm --net=host $curlimage -s 'https://127.0.0.1/v3/settings/server-url' -H 'content-type: application/json' -H "Authorization: Bearer $APITOKEN" -X PUT --data-binary '{"name":"server-url","value":"${rancher_server_url}"}' --insecure
+
+# Setup Scaleway init
+mkdir -p /files && touch /files/script.sh
+cat << EOF > /files/script.sh
+apk add jq
+
+/scw init access-key=${scw_access_key} secret-key=${scw_secret_key} organization-id=${scw_organization_id} project-id=${scw_project_id} send-telemetry=false install-autocomplete=false with-ssh-key=false
+
+# Create Scaleway Secret Manager to rancher api token
+FILTER_SECRET=\$(/scw secret secret list | grep rancher_api_token)
+if [ -z "\$FILTER_SECRET" ]; then
+  echo "The Rancher API secret token doesn't exist. Create it"
+  SECRET_ID=\$(/scw secret secret create name=rancher_api_token --output=json | jq .id)
+  /scw secret version create secret-id=\$SECRET_ID data=$APITOKEN --output=json
+else
+  echo "The Rancher API secret token already exists. Remove and recreate"
+  SECRET_ID=\$(echo \$FILTER_SECRET | awk '{print $1}')
+  /scw secret secret delete secret-id=\$SECRET_ID
+  SECRET_ID=\$(/scw secret secret create name=rancher_api_token --output=json | jq .id)
+  /scw secret version create secret-id=\$SECRET_ID data=$APITOKEN --output=json
+fi
+EOF
+cat /files/script.sh
+
+docker run --rm --volume=/files:/files --entrypoint "/bin/bash" scaleway/cli:2.20 /files/script.sh
