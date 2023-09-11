@@ -89,3 +89,6 @@ releases:
   namespace: demo
   chart: ./4-apps/echo-server
   createNamespace: true
+  needs:
+  - cert-manager/cert-manager
+  - origin-ca-issuer/origin-ca-issuer

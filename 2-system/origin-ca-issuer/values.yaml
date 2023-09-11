@@ -17,7 +17,7 @@ global:
 
 # CRDs configuration
 crds:
-  install: false
+  install: true
 
 # Value specific to the origin-ca-issuer controller
 controller:
