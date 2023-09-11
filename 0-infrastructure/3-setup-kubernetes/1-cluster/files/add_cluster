@@ -1,0 +1,5 @@
+#!/bin/bash
+set -x
+
+kubectl kc delete scalaway-personal-pocs-services-001 >/dev/null 2>&1
+kubectl kc add -f $(pwd)/kubeconfig --context-name scalaway-personal-pocs-services-001 -c

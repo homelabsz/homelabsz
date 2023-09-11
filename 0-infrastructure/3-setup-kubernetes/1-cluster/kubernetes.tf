@@ -3,7 +3,7 @@ resource "scaleway_k8s_cluster" "pocs_services" {
   type                        = "kapsule"
   description                 = "Scaleway Kubernetes ${var.cluster_name}"
   version                     = var.cluster_version
-  cni                         = "cilium"
+  cni                         = "calico"
   delete_additional_resources = true
   tags                        = ["managed-by=terraform"]
   autoscaler_config {
@@ -43,9 +43,16 @@ resource "local_file" "kubeconfig" {
 }
 
 resource "null_resource" "kubeconfig" {
+  triggers = {
+    timestamp = "${timestamp()}"
+  }
   provisioner "local-exec" {
-    command     = "kubectl kc add -f $(pwd)/kubeconfig --context-name scalaway-personal-pocs-services-001 -c"
+    command     = "chmod +x ${path.module}/files/add_cluster; ${path.module}/files/add_cluster"
     interpreter = ["bash", "-c"]
   }
-  depends_on = [local_file.kubeconfig]
+  lifecycle {
+    replace_triggered_by = [
+      local_file.kubeconfig
+    ]
+  }
 }
