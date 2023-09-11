@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: echo-server-crt
+spec:
+  secretName: echo-server-tls
+  dnsNames:
+    - echo-server.lpsm.dev
+  duration: 168h
+  renewBefore: 24h
+  issuerRef:
+    group: cert-manager.k8s.cloudflare.com
+    kind: OriginIssuer
+    name: production-issuer

@@ -19,12 +19,10 @@ ingress-nginx:
       use-forwarded-headers: true
       use-geoip2: true
     extraArgs:
-      default-ssl-certificate: ingress-nginx/lpsm-dev
+      enable-ssl-passthrough: true
     ingressClassResource:
       default: true
       enabled: true
     kind: DaemonSet
     service:
       type: LoadBalancer
-      annotations:
-        external-dns.alpha.kubernetes.io/hostname: lpsm.dev
