@@ -33,14 +33,6 @@ tasks:
     cmds:
     - gitleaks detect --verbose .
 
-  gen-ssh-github:
-    desc: Create an SSH key to integrate with Github and the GitOps process in ArgoCD
-    cmds:
-    - |
-      rm -f $GITOPS_GITHUB_SSH_KEY_NAME $GITOPS_GITHUB_SSH_KEY_NAME.pub
-      ssh-keygen -qt ed25519 -N "" -f $GITOPS_GITHUB_SSH_KEY_NAME -C $GITOPS_GITHUB_SSH_KEY_DESCRIPTION
-      echo "run 'pbcopy < $GITOPS_GITHUB_SSH_KEY_NAME.pub' and paste that into GitHub"
-
   infracost:
     desc: Run infracost cli
     preconditions:
