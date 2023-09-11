@@ -15,6 +15,10 @@ global:
   rbac:
     create: true
 
+# CRDs configuration
+crds:
+  install: false
+
 # Value specific to the origin-ca-issuer controller
 controller:
   image:

@@ -1,23 +1,22 @@
 module "gitlab_group_root" {
-  source  = "gitlab.com/nuageit/tf-gitlab-groups/local"
-  version = "1.0.0"
+  source = "./modules/gitlab-groups"
 
   gitlab_groups = [
-    { path = "devops", parent = "nuageit-automation" },
-    { path = "iac", parent = "nuageit-automation" },
-    { path = "kubeops", parent = "nuageit-automation" },
-    { path = "shared", parent = "nuageit-automation" },
-    { path = "members", parent = "nuageit-automation" }
+    { path = "iac", parent = "homelabsz" },
+    { path = "kubeops", parent = "homelabsz" },
+    { path = "libs", parent = "homelabsz" },
+    { path = "shared", parent = "homelabsz" },
+    { path = "members", parent = "homelabsz" }
   ]
 }
 
-module "gitlab_group_shared" {
-  source  = "gitlab.com/nuageit/tf-gitlab-groups/local"
-  version = "1.0.0"
+module "gitlab_group_iac" {
+  source = "./modules/gitlab-groups"
 
   gitlab_groups = [
-    { path = "demo", parent = "nuageit-automation/shared" },
-    { path = "pocs", parent = "nuageit-automation/shared" }
+    { path = "accounts", parent = "homelabsz/iac" },
+    { path = "resources", parent = "homelabsz/iac" },
+    { path = "modules", parent = "homelabsz/iac" },
   ]
 
   depends_on = [
@@ -26,11 +25,50 @@ module "gitlab_group_shared" {
 }
 
 module "gitlab_group_kubeops" {
-  source  = "gitlab.com/nuageit/tf-gitlab-groups/local"
-  version = "1.0.0"
+  source = "./modules/gitlab-groups"
 
   gitlab_groups = [
-    { path = "helm", parent = "nuageit-automation/kubeops" },
+    { path = "helm", parent = "homelabsz/kubeops" },
+  ]
+
+  depends_on = [
+    module.gitlab_group_root
+  ]
+}
+
+module "gitlab_group_kubeops_helm" {
+  source = "./modules/gitlab-groups"
+
+  gitlab_groups = [
+    { path = "applications", parent = "homelabsz/kubeops/helm" },
+    { path = "libs", parent = "homelabsz/kubeops/helm" },
+  ]
+
+  depends_on = [
+    module.gitlab_group_root,
+    module.gitlab_group_kubeops
+  ]
+}
+
+module "gitlab_group_libs" {
+  source = "./modules/gitlab-groups"
+
+  gitlab_groups = [
+    { path = "npm", parent = "homelabsz/libs" },
+    { path = "pip", parent = "homelabsz/libs" },
+  ]
+
+  depends_on = [
+    module.gitlab_group_root
+  ]
+}
+
+module "gitlab_group_shared" {
+  source = "./modules/gitlab-groups"
+
+  gitlab_groups = [
+    { path = "demo", parent = "homelabsz/shared" },
+    { path = "pocs", parent = "homelabsz/shared" }
   ]
 
   depends_on = [
@@ -39,31 +77,15 @@ module "gitlab_group_kubeops" {
 }
 
 module "gitlab_group_members" {
-  source  = "gitlab.com/nuageit/tf-gitlab-groups/local"
-  version = "1.0.0"
+  source = "./modules/gitlab-groups"
 
   gitlab_groups = [
-    { path = "squad-devs", parent = "nuageit-automation/members" },
-    { path = "squad-leaders", parent = "nuageit-automation/members" },
-    { path = "squad-devops", parent = "nuageit-automation/members" },
-    { path = "squad-cloud", parent = "nuageit-automation/members" },
-    { path = "squad-po", parent = "nuageit-automation/members" },
-    { path = "squad-quality", parent = "nuageit-automation/members" }
-  ]
-
-  depends_on = [
-    module.gitlab_group_root
-  ]
-}
-
-module "gitlab_group_iac" {
-  source  = "gitlab.com/nuageit/tf-gitlab-groups/local"
-  version = "1.0.0"
-
-  gitlab_groups = [
-    { path = "accounts", parent = "nuageit-automation/iac" },
-    { path = "resources", parent = "nuageit-automation/iac" },
-    { path = "modules", parent = "nuageit-automation/iac" },
+    { path = "squad-devs", parent = "homelabsz/members" },
+    { path = "squad-leaders", parent = "homelabsz/members" },
+    { path = "squad-devops", parent = "homelabsz/members" },
+    { path = "squad-cloud", parent = "homelabsz/members" },
+    { path = "squad-po", parent = "homelabsz/members" },
+    { path = "squad-quality", parent = "homelabsz/members" }
   ]
 
   depends_on = [

@@ -1,6 +1,9 @@
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
+| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | ~> 16.3 |
 
 ## Providers
 
@@ -10,11 +13,13 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_gitlab_group_iac"></a> [gitlab\_group\_iac](#module\_gitlab\_group\_iac) | gitlab.com/nuageit/tf-gitlab-groups/local | 1.0.0 |
-| <a name="module_gitlab_group_kubeops"></a> [gitlab\_group\_kubeops](#module\_gitlab\_group\_kubeops) | gitlab.com/nuageit/tf-gitlab-groups/local | 1.0.0 |
-| <a name="module_gitlab_group_members"></a> [gitlab\_group\_members](#module\_gitlab\_group\_members) | gitlab.com/nuageit/tf-gitlab-groups/local | 1.0.0 |
-| <a name="module_gitlab_group_root"></a> [gitlab\_group\_root](#module\_gitlab\_group\_root) | gitlab.com/nuageit/tf-gitlab-groups/local | 1.0.0 |
-| <a name="module_gitlab_group_shared"></a> [gitlab\_group\_shared](#module\_gitlab\_group\_shared) | gitlab.com/nuageit/tf-gitlab-groups/local | 1.0.0 |
+| <a name="module_gitlab_group_iac"></a> [gitlab\_group\_iac](#module\_gitlab\_group\_iac) | ./modules/gitlab-groups | n/a |
+| <a name="module_gitlab_group_kubeops"></a> [gitlab\_group\_kubeops](#module\_gitlab\_group\_kubeops) | ./modules/gitlab-groups | n/a |
+| <a name="module_gitlab_group_kubeops_helm"></a> [gitlab\_group\_kubeops\_helm](#module\_gitlab\_group\_kubeops\_helm) | ./modules/gitlab-groups | n/a |
+| <a name="module_gitlab_group_libs"></a> [gitlab\_group\_libs](#module\_gitlab\_group\_libs) | ./modules/gitlab-groups | n/a |
+| <a name="module_gitlab_group_members"></a> [gitlab\_group\_members](#module\_gitlab\_group\_members) | ./modules/gitlab-groups | n/a |
+| <a name="module_gitlab_group_root"></a> [gitlab\_group\_root](#module\_gitlab\_group\_root) | ./modules/gitlab-groups | n/a |
+| <a name="module_gitlab_group_shared"></a> [gitlab\_group\_shared](#module\_gitlab\_group\_shared) | ./modules/gitlab-groups | n/a |
 
 ## Resources
 
