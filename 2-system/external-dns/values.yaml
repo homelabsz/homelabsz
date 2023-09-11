@@ -1,11 +1,10 @@
 ---
 external-dns:
   policy: sync
-  sources: ["crd", "ingress", "service"]
+  sources: ["ingress", "service"]
   provider: cloudflare
   domainFilters: ["lpsm.dev"]
   extraArgs:
-    - --ingress-class=nginx
     - --cloudflare-proxied
   env:
     - name: CF_API_TOKEN

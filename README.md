@@ -27,6 +27,8 @@
 ## ➤ Tools <a name="#-tools"></a>
 
 - https://forum.gitlab.com/t/deploy-keys-api-needs-admin-access/34814/6
+- https://github.com/databus23/helm-diff
+- https://clienttest.ssllabs.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- END_TF_DOCS -->

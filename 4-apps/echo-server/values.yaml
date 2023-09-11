@@ -11,6 +11,4 @@ echo-server:
         paths:
           - /
     tls:
-      - hosts:
-          - echo-server.lpsm.dev
-        secretName: echo-server-tls-ingress
+      - secretName: echo-server-tls-ingress

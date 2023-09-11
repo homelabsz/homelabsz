@@ -3,6 +3,8 @@ ingress-nginx:
   defaultBackend:
     enabled: false
   controller:
+    admissionWebhooks:
+      enabled: false
     config:
       client-body-buffer-size: 100M
       client-body-timeout: 120

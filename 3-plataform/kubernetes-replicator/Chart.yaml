@@ -1,0 +1,11 @@
+---
+apiVersion: v2
+name: kubernetes-replicator
+description: A helm chart for an app
+type: application
+version: 0.1.0
+dependencies:
+- name: kubernetes-replicator
+  version: 2.9.1
+  repository: https://helm.mittwald.de
+

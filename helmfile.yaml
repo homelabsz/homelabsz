@@ -15,6 +15,8 @@ repositories:
   url: https://ealenn.github.io/charts
 - name: ingress-nginx
   url: https://kubernetes.github.io/ingress-nginx
+- name: kubernetes-replicator
+  url: https://helm.mittwald.de
 - name: reloader
   url: https://stakater.github.io/stakater-charts
 ---
@@ -51,6 +53,12 @@ releases:
   createNamespace: true
   needs:
   - cert-manager
+- name: origin-ca-issuer
+  namespace: origin-ca-issuer
+  chart: ./2-system/origin-ca-issuer
+  createNamespace: true
+  needs:
+  - cert-manager/cert-manager
 # Setup Network
 - name: ingress-nginx
   namespace: ingress-nginx
@@ -71,6 +79,11 @@ releases:
   createNamespace: true
   needs:
   - external-secrets/external-secrets
+# Setup Kubernetes Replicator
+- name: kubernetes-replicator
+  namespace: kubernetes-replicator
+  chart: ./3-plataform/kubernetes-replicator
+  createNamespace: true
 # Setup Apps
 - name: echo-server
   namespace: demo
