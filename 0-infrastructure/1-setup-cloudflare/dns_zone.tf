@@ -18,7 +18,9 @@ resource "cloudflare_zone_settings_override" "lpsm_dev" {
     always_use_https         = "on"
     automatic_https_rewrites = "on"
     brotli                   = "on"
+    browser_cache_ttl        = 1800
     browser_check            = "on"
+    cache_level              = "aggressive"
     challenge_ttl            = 1800
     development_mode         = "off"
     email_obfuscation        = "on"
@@ -27,18 +29,18 @@ resource "cloudflare_zone_settings_override" "lpsm_dev" {
     opportunistic_encryption = "on"
     min_tls_version          = "1.2"
     minify {
-      css  = "on"
-      js   = "on"
-      html = "on"
+      css  = "off"
+      js   = "off"
+      html = "off"
     }
     server_side_exclude = "on"
     security_header {
-      enabled = true
+      enabled            = true
+      include_subdomains = true
+      max_age            = 15552000
+      nosniff            = true
+      preload            = true
     }
-    ssl        = "full"
+    ssl = "full"
   }
-
-  depends_on = [
-    cloudflare_record.blog
-  ]
 }
