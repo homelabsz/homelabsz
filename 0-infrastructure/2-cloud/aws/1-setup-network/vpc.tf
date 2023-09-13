@@ -63,6 +63,6 @@ resource "aws_flow_log" "vpc_flowlog" {
   vpc_id                   = aws_vpc.this.id
   traffic_type             = "ALL"
   max_aggregation_interval = 60
-  log_group_name           = aws_cloudwatch_log_group.vpc_flowlog.id
+  log_destination          = aws_cloudwatch_log_group.vpc_flowlog.arn
   iam_role_arn             = aws_iam_role.vpc_flowlog.arn
 }

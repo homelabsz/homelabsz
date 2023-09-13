@@ -6,6 +6,7 @@ provider "aws" {
       ManagedBy   = "Terraform"
       Account     = local.account
       Environment = var.environment
+      Name        = "Terraform Default Tags"
     }
   }
 }
