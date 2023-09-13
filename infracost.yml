@@ -2,3 +2,5 @@ version: 0.1
 projects:
 - path: ./0-infrastructure/2-cloud/aws/1-setup-network
   name: aws-setup-network
+- path: ./0-infrastructure/2-cloud/aws/2-setup-dns
+  name: aws-setup-dns
