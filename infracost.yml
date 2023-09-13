@@ -1,6 +1,4 @@
 version: 0.1
 projects:
-- path: ./0-infrastructure/1-setup-network
-  name: 1-setup-network
-- path: ./0-infrastructure/4-setup-instances
-  name: 2-rancher
+- path: ./0-infrastructure/2-cloud/aws/1-setup-network
+  name: aws-setup-network

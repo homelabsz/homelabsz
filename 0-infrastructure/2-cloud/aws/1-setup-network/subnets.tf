@@ -7,7 +7,7 @@ resource "aws_subnet" "private" {
   availability_zone = each.value.availability_zone
 
   tags = {
-    Name = "subnet-${local.account}-private-${each.key}"
+    Name = "subnet-${local.account}-private-${split("-", each.value.availability_zone)[2]}"
   }
 }
 
@@ -20,7 +20,7 @@ resource "aws_subnet" "public" {
   availability_zone = each.value.availability_zone
 
   tags = {
-    Name = "subnet-${local.account}-public-${each.key}"
+    Name = "subnet-${local.account}-public-${split("-", each.value.availability_zone)[2]}"
   }
 }
 
@@ -33,6 +33,6 @@ resource "aws_subnet" "publish" {
   availability_zone = each.value.availability_zone
 
   tags = {
-    Name = "subnet-${local.account}-publish-${split("-", each.value.availability_zone)[3]}"
+    Name = "subnet-${local.account}-publish-${split("-", each.value.availability_zone)[2]}"
   }
 }

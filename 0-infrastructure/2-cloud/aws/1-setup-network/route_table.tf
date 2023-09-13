@@ -25,3 +25,24 @@ resource "aws_route_table" "publish" {
     Name = "rt-${local.account}-publish"
   }
 }
+
+# Setup Route Table Association Private
+resource "aws_route_table_association" "private" {
+  for_each       = { for idx, value in aws_subnet.private : idx => value }
+  subnet_id      = each.value.id
+  route_table_id = aws_route_table.private.id
+}
+
+# Setup Route Table Association Public
+resource "aws_route_table_association" "public" {
+  for_each       = { for idx, value in aws_subnet.public : idx => value }
+  subnet_id      = each.value.id
+  route_table_id = aws_route_table.public.id
+}
+
+# Setup Route Table Association Publish
+resource "aws_route_table_association" "publish" {
+  for_each       = { for idx, value in aws_subnet.publish : idx => value }
+  subnet_id      = each.value.id
+  route_table_id = aws_route_table.publish.id
+}
