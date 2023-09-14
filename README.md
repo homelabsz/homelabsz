@@ -12,6 +12,18 @@
 - Terraform to create Rancher cluster, Rancher projects and Rancher namespaces
 - Terraform to setup SSH keys for GitOps process in GitHub and GitLab
 
+To configure your system for the development of this project, follow the steps below:
+
+- Install [asdf](https://asdf-vm.com/) to manage runtime dependencies.
+- Install runtime dependencies.
+
+```bash
+cut -d' ' -f1 .tool-versions | xargs -I{} sh -c 'asdf plugin add "$1"' -- {}
+asdf install
+```
+
+- Run task from the root of the repository to see available commands. We use task in place of make for this project. See [Taskfile.yml](Taskfile.yml) for more information.
+
 ## ➤ Steps <a name="#-steps"></a>
 
 - Go to `0-infrastructure` folder and run `terragrunt run-all apply`
