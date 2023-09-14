@@ -44,6 +44,7 @@
 - https://github.com/databus23/helm-diff
 - https://clienttest.ssllabs.com
 - https://engineering.deptagency.com/best-practices-for-terraform-aws-tags
+- https://dnschecker.org/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- END_TF_DOCS -->
