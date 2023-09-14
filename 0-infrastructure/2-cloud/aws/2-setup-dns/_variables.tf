@@ -5,20 +5,20 @@ variable "environment" {
 
 variable "profile" {
   type    = string
-  default = "nuageit-pocs-services"
+  default = "personal"
 }
 
 variable "region" {
   type    = string
-  default = "sa-east-1"
+  default = "us-east-1"
 }
 
 variable "root_domain_name" {
   type    = string
-  default = "nupocs.cloud"
+  default = "lpsm.dev"
 }
 
 variable "vpc_id" {
   type    = string
-  default = "vpc-08617e93c7daf9b7a"
+  default = "vpc-0a19ca6293d164a27"
 }

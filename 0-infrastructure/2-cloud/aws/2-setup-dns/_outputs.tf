@@ -3,9 +3,9 @@ output "acm_validation_timeout" {
 }
 
 output "public_tls_cert" {
-  value = aws_acm_certificate.nupocs.arn
+  value = aws_acm_certificate.this.arn
 }
 
 output "registrar_name_servers" {
-  value = aws_route53_zone.nupocs.name_servers
+  value = aws_route53_zone.this.name_servers
 }
