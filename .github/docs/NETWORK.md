@@ -6,7 +6,7 @@
 
 Um endereço IP tem duas partes:
 
-- O endereço da rede é uma série de dígitos numéricos que apontam para o identificador exclusivo da rede 
+- O endereço da rede é uma série de dígitos numéricos que apontam para o identificador exclusivo da rede
 - O endereço do host é uma série de números que indicam o identificador do host ou do dispositivo individual na rede
 
 Até o início da década de 1990, os endereços IP eram alocados usando o sistema de endereçamento clássico. O comprimento total do endereço foi fixado e o número de bits alocados para as partes da rede e do host também foram fixados.
@@ -14,7 +14,7 @@ Até o início da década de 1990, os endereços IP eram alocados usando o siste
 
 ## Endereços clássicos
 
-Um endereço IPv4 consiste em 32 bits (um bit se trata de um termo usado na informática e computação para designar a menor unidade de informação que se pode armazenar ou transmitir). Cada sequência de números separados pelo ponto consiste em 8 bits, representados por 0 a 255 em formas numéricas. As organizações poderiam comprar três classes de endereços IPv4. 
+Um endereço IPv4 consiste em 32 bits (um bit se trata de um termo usado na informática e computação para designar a menor unidade de informação que se pode armazenar ou transmitir). Cada sequência de números separados pelo ponto consiste em 8 bits, representados por 0 a 255 em formas numéricas. As organizações poderiam comprar três classes de endereços IPv4.
 
 **Classe A**
 
@@ -26,12 +26,12 @@ Um endereço IPv4 de classe B tem 16 bits de prefixo de rede. Por exemplo, consi
 
 **Classe C**
 
-Um endereço IPv4 de classe C tem 24 bits de prefixo de rede. Por exemplo, considere 192.168.1.100, em que 192.168.1 é o endereço da rede e 100 é o endereço do host. 
+Um endereço IPv4 de classe C tem 24 bits de prefixo de rede. Por exemplo, considere 192.168.1.100, em que 192.168.1 é o endereço da rede e 100 é o endereço do host.
 
 ## Endereços sem classes
 
-Os endereços do Encaminhamento Entre Domínios sem Classificação (CIDR) usam a máscara de sub-rede de comprimento variável (VLSM) para alterar a proporção entre os bits de endereço da rede e do host em um endereço IP. Uma máscara de sub-rede é um conjunto de identificadores que retorna o valor do endereço de rede no endereço IP, transformando o endereço do host em zeros. 
+Os endereços do Encaminhamento Entre Domínios sem Classificação (CIDR) usam a máscara de sub-rede de comprimento variável (VLSM) para alterar a proporção entre os bits de endereço da rede e do host em um endereço IP. Uma máscara de sub-rede é um conjunto de identificadores que retorna o valor do endereço de rede no endereço IP, transformando o endereço do host em zeros.
 
 Uma sequência de VLSM permite que os administradores de rede dividam um espaço de endereço IP em sub-redes de vários tamanhos. Cada sub-rede pode ter uma contagem flexível de hosts e um número limitado de endereços IP. Um endereço IP CIDR acrescenta um valor de sufixo informando o número de bits do prefixo do endereço de rede a um endereço IP normal.
 
-Por exemplo, 192.0.2.0/24 é um endereço CIDR IPv4 em que os primeiros 24 bits, ou 192.0.2, são o endereço da rede. 
+Por exemplo, 192.0.2.0/24 é um endereço CIDR IPv4 em que os primeiros 24 bits, ou 192.0.2, são o endereço da rede.
