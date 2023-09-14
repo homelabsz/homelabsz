@@ -1,6 +1,29 @@
 <!-- BEGIN_TF_DOCS -->
 <a name="readme-top"></a>
 
+<img alt="gif-header" src="https://github.com/lpsm-dev/lpsm-dev/blob/main/.github/assets/gif-header.gif" width="225"/>
+
+<h2>Homelabsz</h2>
+
+[![Semantic Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)]()
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)]()
+
+---
+
+<img alt="gif-about" src="https://github.com/lpsm-dev/lpsm-dev/blob/main/.github/assets/gif-about.gif" width="225"/>
+
+<p>Setup homelab project with Terraform + Kubernetes + Gitops</p>
+
+<p>
+  <a href="#-description-">Description</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-getting-started-">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-explain-">Explain</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-versioning-">Versioning</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-troubleshooting-">Troubleshooting</a>
+</p>
+
+</div>
+
 ## ➤ Getting Started <a name="#-getting-started"></a>
 
 ### Setup
