@@ -3,10 +3,13 @@ provider "aws" {
   region  = var.region
   default_tags {
     tags = {
-      ManagedBy   = "Terraform"
       Account     = local.account
+      Application = "setup-network"
+      CostCenter  = "root-services"
       Environment = var.environment
-      Name        = "Terraform Default Tags"
+      ManagedBy   = "terraform"
+      Name        = "terraform-default-name"
+      Owner       = "root-services"
     }
   }
 }

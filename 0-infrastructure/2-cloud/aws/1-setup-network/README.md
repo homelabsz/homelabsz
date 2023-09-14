@@ -42,8 +42,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_environment"></a> [environment](#input\_environment) | n/a | `string` | `"pocs"` | no |
-| <a name="input_profile"></a> [profile](#input\_profile) | n/a | `string` | `"nuageit-pocs-services"` | no |
-| <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"sa-east-1"` | no |
+| <a name="input_profile"></a> [profile](#input\_profile) | n/a | `string` | `"personal"` | no |
+| <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"us-east-1"` | no |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | n/a | `string` | `"10.165.16.0/20"` | no |
 
 ## Outputs

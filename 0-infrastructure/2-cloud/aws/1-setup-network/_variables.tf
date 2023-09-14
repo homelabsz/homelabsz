@@ -5,12 +5,12 @@ variable "environment" {
 
 variable "profile" {
   type    = string
-  default = "nuageit-pocs-services"
+  default = "personal"
 }
 
 variable "region" {
   type    = string
-  default = "sa-east-1"
+  default = "us-east-1"
 }
 
 variable "vpc_cidr" {
