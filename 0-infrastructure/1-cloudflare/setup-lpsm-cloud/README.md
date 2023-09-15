@@ -19,6 +19,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [cloudflare_ruleset.block](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/ruleset) | resource |
 | [cloudflare_zone_settings_override.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/zone_settings_override) | resource |
 | [cloudflare_zone.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/zone) | data source |
 
@@ -27,7 +28,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_cloudflare_api_token"></a> [cloudflare\_api\_token](#input\_cloudflare\_api\_token) | The API Token for operations | `string` | `""` | no |
-| <a name="input_root_domain_name"></a> [root\_domain\_name](#input\_root\_domain\_name) | The DNS zone name which will be added | `string` | `"lpsm.dev"` | no |
+| <a name="input_root_domain_name"></a> [root\_domain\_name](#input\_root\_domain\_name) | The DNS zone name which will be added | `string` | `"lpsm.cloud"` | no |
 
 ## Outputs
 
