@@ -1,13 +1,13 @@
-resource "cloudflare_zone" "lpsm_dev" {
-  zone       = "lpsm.dev"
-  account_id = data.cloudflare_accounts.lpsm_dev.accounts[0].id
+resource "cloudflare_zone" "this" {
+  zone       = var.root_domain_name
+  account_id = data.cloudflare_accounts.this.accounts[0].id
   jump_start = false
   plan       = "free"
   type       = "full"
 }
 
-resource "cloudflare_zone_settings_override" "lpsm_dev" {
-  zone_id = cloudflare_zone.lpsm_dev.id
+resource "cloudflare_zone_settings_override" "this" {
+  zone_id = cloudflare_zone.this.id
 
   settings {
     always_online            = "off"

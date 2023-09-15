@@ -2,7 +2,7 @@ terraform {
   backend "remote" {
     organization = "lpsm-dev"
     workspaces {
-      name = "setup-cloudflare"
+      name = "setup-cloudflare-lpsm-dev"
     }
   }
 }

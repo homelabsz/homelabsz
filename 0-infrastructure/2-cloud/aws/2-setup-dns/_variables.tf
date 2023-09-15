@@ -22,3 +22,10 @@ variable "vpc_id" {
   type    = string
   default = "vpc-0a19ca6293d164a27"
 }
+
+variable "cloudflare_api_token" {
+  type        = string
+  description = "The API Token for operations"
+  default     = ""
+  sensitive   = true
+}

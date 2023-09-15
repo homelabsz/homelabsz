@@ -1,5 +1,5 @@
-resource "cloudflare_record" "blog" {
-  zone_id = cloudflare_zone.lpsm_dev.id
+resource "cloudflare_record" "hashnode_blog" {
+  zone_id = cloudflare_zone.this.id
   name    = "blog"
   type    = "CNAME"
   value   = "hashnode.network"

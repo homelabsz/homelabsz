@@ -4,3 +4,9 @@ variable "cloudflare_api_token" {
   default     = ""
   sensitive   = true
 }
+
+variable "root_domain_name" {
+  type        = string
+  description = "The DNS zone name which will be added"
+  default     = "lpsm.dev"
+}

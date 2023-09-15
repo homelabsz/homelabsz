@@ -1,8 +1,8 @@
 output "cloudflare_zone" {
   value = {
     zone = {
-      id     = cloudflare_zone.lpsm_dev.id
-      status = cloudflare_zone.lpsm_dev.status
+      id     = cloudflare_zone.this.id
+      status = cloudflare_zone.this.status
     }
   }
   description = "Output Cloudflare Zone information"

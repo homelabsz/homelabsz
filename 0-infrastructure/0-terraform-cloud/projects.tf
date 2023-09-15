@@ -1,24 +1,19 @@
 resource "tfe_project" "aws" {
-  organization = "lpsm-dev"
+  organization = var.organization
   name         = "aws"
 }
 
 resource "tfe_project" "cloudflare" {
-  organization = "lpsm-dev"
+  organization = var.organization
   name         = "cloudflare"
 }
 
 resource "tfe_project" "integrations" {
-  organization = "lpsm-dev"
+  organization = var.organization
   name         = "integrations"
 }
 
-resource "tfe_project" "kubernetes" {
-  organization = "lpsm-dev"
-  name         = "kubernetes"
-}
-
 resource "tfe_project" "scaleway" {
-  organization = "lpsm-dev"
+  organization = var.organization
   name         = "scaleway"
 }
