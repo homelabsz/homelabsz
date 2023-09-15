@@ -67,6 +67,7 @@ asdf install
 - https://clienttest.ssllabs.com
 - https://engineering.deptagency.com/best-practices-for-terraform-aws-tags
 - https://dnschecker.org/
+- https://aws.amazon.com/blogs/apn/simplify-and-secure-terraform-workflows-on-aws-with-dynamic-provider-credentials/
 
 ## ➤ Versioning <a name="#-versioning"></a>
 

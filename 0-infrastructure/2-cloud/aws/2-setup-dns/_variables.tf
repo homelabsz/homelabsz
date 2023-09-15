@@ -3,11 +3,6 @@ variable "environment" {
   default = "pocs"
 }
 
-variable "profile" {
-  type    = string
-  default = "personal"
-}
-
 variable "region" {
   type    = string
   default = "us-east-1"

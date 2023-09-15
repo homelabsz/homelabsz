@@ -34,7 +34,6 @@
 |------|-------------|------|---------|:--------:|
 | <a name="input_cloudflare_api_token"></a> [cloudflare\_api\_token](#input\_cloudflare\_api\_token) | The API Token for operations | `string` | `""` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | n/a | `string` | `"pocs"` | no |
-| <a name="input_profile"></a> [profile](#input\_profile) | n/a | `string` | `"personal"` | no |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"us-east-1"` | no |
 | <a name="input_root_domain_name"></a> [root\_domain\_name](#input\_root\_domain\_name) | n/a | `string` | `"lpsm.dev"` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | n/a | `string` | `"vpc-0a19ca6293d164a27"` | no |
@@ -43,6 +42,4 @@
 
 | Name | Description |
 |------|-------------|
-| <a name="output_acm_validation_timeout"></a> [acm\_validation\_timeout](#output\_acm\_validation\_timeout) | n/a |
-| <a name="output_public_tls_cert"></a> [public\_tls\_cert](#output\_public\_tls\_cert) | n/a |
 | <a name="output_registrar_name_servers"></a> [registrar\_name\_servers](#output\_registrar\_name\_servers) | n/a |
