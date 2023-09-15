@@ -3,13 +3,16 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
 | <a name="requirement_tfe"></a> [tfe](#requirement\_tfe) | ~> 0.48 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.17.0 |
 | <a name="provider_tfe"></a> [tfe](#provider\_tfe) | 0.48.0 |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | 4.0.4 |
 
 ## Modules
 
@@ -19,22 +22,36 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_iam_openid_connect_provider.tfc_provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_openid_connect_provider) | resource |
+| [aws_iam_policy.tfc_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_role.tfc_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.tfc_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [tfe_project.aws](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/project) | resource |
 | [tfe_project.cloudflare](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/project) | resource |
 | [tfe_project.integrations](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/project) | resource |
 | [tfe_project.scaleway](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/project) | resource |
+| [tfe_project_variable_set.aws](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/project_variable_set) | resource |
+| [tfe_variable.enable_aws_provider_auth](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
+| [tfe_variable.tfc_aws_role_arn](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
+| [tfe_variable_set.aws](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable_set) | resource |
+| [tfe_workspace.aws_dns](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.aws_kubernetes](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.aws_network](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.aws_rancher](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.lpsm_cloud](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.lpsm_dev](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.scaleway_kubernetes](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.scaleway_rancher](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tls_certificate.tfc_certificate](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/data-sources/certificate) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_organization"></a> [organization](#input\_organization) | Name of the organization in Terraform Cloud | `string` | `"lpsm-dev"` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | n/a | `string` | `"pocs"` | no |
+| <a name="input_profile"></a> [profile](#input\_profile) | n/a | `string` | `"personal"` | no |
+| <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"us-east-1"` | no |
+| <a name="input_tf_organization"></a> [tf\_organization](#input\_tf\_organization) | Name of the organization in Terraform Cloud | `string` | `"lpsm-dev"` | no |
 
 ## Outputs
 
