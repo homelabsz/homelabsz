@@ -14,5 +14,5 @@ resource "aws_subnet" "public" {
 resource "aws_route_table_association" "public" {
   for_each       = { for idx, value in aws_subnet.public : idx => value }
   subnet_id      = each.value.id
-  route_table_id = aws_route_table.igw_route_table.id
+  route_table_id = aws_route_table.public.id
 }

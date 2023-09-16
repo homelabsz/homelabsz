@@ -10,8 +10,21 @@ resource "aws_subnet" "publish" {
   }
 }
 
+resource "aws_route_table" "publish" {
+  vpc_id = aws_vpc.this.id
+  tags = {
+    Name = "rt-${local.account}-publish"
+  }
+}
+
+resource "aws_route" "publish" {
+  route_table_id         = aws_route_table.publish.id
+  nat_gateway_id         = aws_nat_gateway.nat[0].id
+  destination_cidr_block = "0.0.0.0/0"
+}
+
 resource "aws_route_table_association" "publish" {
   for_each       = { for idx, value in aws_subnet.publish : idx => value }
   subnet_id      = each.value.id
-  route_table_id = aws_route_table.nat.id
+  route_table_id = aws_route_table.publish.id
 }

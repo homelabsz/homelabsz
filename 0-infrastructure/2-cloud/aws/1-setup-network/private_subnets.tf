@@ -13,5 +13,5 @@ resource "aws_subnet" "private" {
 resource "aws_route_table_association" "private" {
   for_each       = { for idx, value in aws_subnet.private : idx => value }
   subnet_id      = each.value.id
-  route_table_id = aws_route_table.nat.id
+  route_table_id = aws_route_table.private.id
 }

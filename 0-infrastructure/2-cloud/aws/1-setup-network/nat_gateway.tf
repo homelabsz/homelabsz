@@ -1,34 +1,30 @@
-/*
-O AWS Elastic IP é um recurso que permite que um IP seja associado a uma conta da AWS.
-*/
-resource "aws_eip" "vpc_iep" {
-  domain = "vpc"
+resource "aws_eip" "nat" {
+  for_each = { for idx, value in aws_subnet.public : idx => value }
+  domain   = "vpc"
   tags = {
-    Name = format("eip-%s", local.account)
+    Name = format("eip-nat-gateway-%s", split("-", each.value.availability_zone)[2])
   }
 }
 
-/*
-O AWS Nat Gateway é um recurso que permite que instâncias em uma subnet privada se comunique com a Internet.
-*/
 resource "aws_nat_gateway" "nat" {
-  allocation_id = aws_eip.vpc_iep.id
-  subnet_id     = aws_subnet.public[0].id
+  for_each      = aws_subnet.public
+  allocation_id = aws_eip.nat[each.key].id
+  subnet_id     = aws_subnet.public[each.key].id
 
   tags = {
-    Name = format("nat-gateway-%s", local.account)
+    Name = format("nat-gateway-%s", split("-", aws_subnet.public[each.key].availability_zone)[2])
   }
 }
 
-resource "aws_route_table" "nat" {
+resource "aws_route_table" "private" {
   vpc_id = aws_vpc.this.id
   tags = {
     Name = "rt-${local.account}-private"
   }
 }
 
-resource "aws_route" "nat_access" {
-  route_table_id         = aws_route_table.nat.id
+resource "aws_route" "private" {
+  route_table_id         = aws_route_table.private.id
+  nat_gateway_id         = aws_nat_gateway.nat[0].id
   destination_cidr_block = "0.0.0.0/0"
-  nat_gateway_id         = aws_nat_gateway.nat.id
 }
