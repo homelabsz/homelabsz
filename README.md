@@ -42,12 +42,6 @@ asdf install
 
 - Run task from the root of the repository to see available commands. We use task in place of make for this project. See [Taskfile.yml](Taskfile.yml) for more information.
 
-## ➤ Dependencies <a name="#-dependencies"></a>
-
-<div align="center">
-<img alt="infrastructure" src=".github/images/infrastructure.svg"/>
-</div>
-
 ## ➤ Ideas <a name="#-ideas"></a>
 
 - Terraform to set up the network on Scaleway
