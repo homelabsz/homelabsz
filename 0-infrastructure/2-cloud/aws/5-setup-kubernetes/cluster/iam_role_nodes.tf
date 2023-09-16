@@ -40,3 +40,36 @@ resource "aws_iam_role_policy_attachment" "ssm" {
   role       = aws_iam_role.eks_nodes_roles.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
+
+data "aws_iam_policy_document" "csi_driver" {
+  version = "2012-10-17"
+  statement {
+    effect = "Allow"
+    actions = [
+      "kms:CreateGrant",
+      "kms:ListGrants",
+      "kms:RevokeGrant",
+      "kms:Encrypt",
+      "kms:Decrypt",
+      "kms:ReEncrypt*",
+      "kms:GenerateDataKey*",
+      "kms:DescribeKey"
+    ]
+    resources = [
+      aws_kms_key.eks.arn
+    ]
+  }
+
+}
+
+resource "aws_iam_policy" "csi_driver" {
+  name   = format("%s-csi-driver-policy", local.cluster_name)
+  path   = "/"
+  policy = data.aws_iam_policy_document.csi_driver.json
+}
+
+resource "aws_iam_policy_attachment" "csi_driver" {
+  name       = "aws_csi_driver_policy"
+  roles      = [aws_iam_role.eks_nodes_roles.name]
+  policy_arn = aws_iam_policy.csi_driver.arn
+}

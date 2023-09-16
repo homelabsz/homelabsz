@@ -10,6 +10,17 @@ resource "aws_eks_cluster" "this" {
     subnet_ids = var.eks_subnets
   }
 
+  encryption_config {
+    provider {
+      key_arn = aws_kms_key.eks.arn
+    }
+    resources = ["secrets"]
+  }
+
+  enabled_cluster_log_types = [
+    "api", "audit", "authenticator", "controllerManager", "scheduler"
+  ]
+
   tags = {
     Name = local.cluster_name
   }
