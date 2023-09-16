@@ -13,4 +13,7 @@ resource "aws_eks_node_group" "this" {
   depends_on = [
     aws_eks_cluster.this,
   ]
+  tags = {
+    Name = format("%s-node-group", aws_eks_cluster.this.name)
+  }
 }

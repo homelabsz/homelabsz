@@ -9,10 +9,14 @@ resource "aws_eks_cluster" "this" {
     ]
     subnet_ids = var.eks_subnets
   }
+
+  tags = {
+    Name = local.cluster_name
+  }
 }
 
 resource "aws_security_group" "eks_cluster" {
-  name        = "eks-cluster-sg"
+  name        = format("%s-sg", local.cluster_name)
   description = "Cluster security group for EKS"
   vpc_id      = var.vpc_id
   ingress {
@@ -20,5 +24,8 @@ resource "aws_security_group" "eks_cluster" {
     protocol    = "tcp"
     from_port   = 65535
     cidr_blocks = var.cidr_blocks
+  }
+  tags = {
+    Name = format("%s-sg", local.cluster_name)
   }
 }

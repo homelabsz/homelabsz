@@ -41,8 +41,36 @@ resource "tfe_workspace" "aws_dns" {
   tag_names    = ["cloud-provider", "dns"]
 }
 
+resource "tfe_workspace" "aws_bastion_linux" {
+  name         = "setup-aws-instances-bastion-linux"
+  organization = var.tf_organization
+  project_id   = tfe_project.aws.id
+  tag_names    = ["cloud-provider", "instances", "bastion", "linux"]
+}
+
+resource "tfe_workspace" "aws_bastion_windows" {
+  name         = "setup-aws-instances-bastion-windows"
+  organization = var.tf_organization
+  project_id   = tfe_project.aws.id
+  tag_names    = ["cloud-provider", "instances", "bastion", "windows"]
+}
+
+resource "tfe_workspace" "aws_gitlab_server" {
+  name         = "setup-aws-instances-gitlab-server"
+  organization = var.tf_organization
+  project_id   = tfe_project.aws.id
+  tag_names    = ["cloud-provider", "instances", "gitlab"]
+}
+
+resource "tfe_workspace" "aws_gitlab_runner" {
+  name         = "setup-aws-instances-gitlab-runner"
+  organization = var.tf_organization
+  project_id   = tfe_project.aws.id
+  tag_names    = ["cloud-provider", "instances", "gitlab"]
+}
+
 resource "tfe_workspace" "aws_rancher" {
-  name         = "setup-aws-rancher"
+  name         = "setup-aws-instances-rancher"
   organization = var.tf_organization
   project_id   = tfe_project.aws.id
   tag_names    = ["cloud-provider", "instances", "rancher"]

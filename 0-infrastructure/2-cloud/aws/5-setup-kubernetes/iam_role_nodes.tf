@@ -16,14 +16,14 @@ resource "aws_iam_role" "eks_nodes_roles" {
   assume_role_policy = data.aws_iam_policy_document.eks_nodes_role.json
 }
 
-resource "aws_iam_role_policy_attachment" "cni" {
-  role       = aws_iam_role.eks_nodes_roles.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
-}
-
 resource "aws_iam_role_policy_attachment" "node" {
   role       = aws_iam_role.eks_nodes_roles.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+}
+
+resource "aws_iam_role_policy_attachment" "cni" {
+  role       = aws_iam_role.eks_nodes_roles.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
 }
 
 resource "aws_iam_role_policy_attachment" "ecr" {

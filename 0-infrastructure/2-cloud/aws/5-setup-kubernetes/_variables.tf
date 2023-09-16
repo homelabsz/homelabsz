@@ -10,7 +10,7 @@ variable "region" {
 
 variable "eks_version" {
   type    = string
-  default = "1.23"
+  default = "1.27"
 }
 
 variable "eks_subnets" {
@@ -41,8 +41,8 @@ variable "auto_scale_options" {
     desired = number
   })
   default = {
-    min     = 4
-    max     = 10
-    desired = 6
+    min     = 3
+    max     = 5
+    desired = 3
   }
 }
