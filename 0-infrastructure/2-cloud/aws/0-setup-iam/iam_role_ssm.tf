@@ -1,5 +1,5 @@
 resource "aws_iam_role" "ssm" {
-  name = "custom-role-ssm"
+  name = "custom-role-ec2-ssm-cw"
   managed_policy_arns = [
     "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
     "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
@@ -23,5 +23,5 @@ EOF
 
 resource "aws_iam_instance_profile" "ssm" {
   role = aws_iam_role.ssm.name
-  name = "custom-role-ssm"
+  name = "custom-role-ec2-ssm-cw"
 }

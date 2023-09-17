@@ -39,6 +39,16 @@ resource "tfe_workspace" "scaleway_rancher" {
 }
 
 # Project AWS
+resource "tfe_workspace" "aws_iam" {
+  name         = "setup-aws-iam"
+  organization = data.tfe_organization.this.name
+  project_id   = tfe_project.aws.id
+  tag_names    = ["cloud-provider"]
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
 resource "tfe_workspace" "aws_network" {
   name         = "setup-aws-network"
   organization = data.tfe_organization.this.name
