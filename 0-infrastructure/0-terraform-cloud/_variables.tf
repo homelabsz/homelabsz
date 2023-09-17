@@ -4,17 +4,26 @@ variable "tf_organization" {
   default     = "lpsm-dev"
 }
 
+variable "tf_hostname" {
+  type        = string
+  default     = "app.terraform.io"
+  description = "The hostname of the TFC or TFE instance you'd like to use with AWS"
+}
+
 variable "environment" {
-  type    = string
-  default = "pocs"
+  type        = string
+  description = "AWS environment name"
+  default     = "pocs"
 }
 
 variable "profile" {
-  type    = string
-  default = "personal"
+  type        = string
+  description = "AWS profile name as set in the shared configuration and credentials files"
+  default     = "personal"
 }
 
 variable "region" {
-  type    = string
-  default = "us-east-1"
+  type        = string
+  description = "AWS region where the provider will operate"
+  default     = "us-east-1"
 }
