@@ -3,7 +3,7 @@ provider "aws" {
   default_tags {
     tags = {
       Account     = local.account
-      Application = "setup-aws-instances-bastion-linux"
+      Application = "setup-aws-lambda-secret-rotation-rds"
       CostCenter  = "root-services"
       Environment = var.environment
       ManagedBy   = "terraform"
