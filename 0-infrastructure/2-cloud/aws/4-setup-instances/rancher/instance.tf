@@ -8,6 +8,7 @@ resource "aws_instance" "rancher_server" {
     rancher_version       = var.rancher_version
     rancher_server_url    = var.rancher_server_url
   })
+  iam_instance_profile = var.instance_profile
 
   vpc_security_group_ids = [
     aws_security_group.rancher.id

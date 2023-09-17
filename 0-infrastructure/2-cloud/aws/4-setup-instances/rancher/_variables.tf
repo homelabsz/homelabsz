@@ -23,6 +23,12 @@ variable "dns_zone" {
   default = "lpsm.dev"
 }
 
+variable "instance_profile" {
+  type        = string
+  description = "A pre-defined profile to attach to the instance (default is to build our own)"
+  default     = "custom-role-ssm"
+}
+
 variable "rancher_version" {
   type        = string
   description = "Rancher version"

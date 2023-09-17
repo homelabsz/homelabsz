@@ -15,6 +15,6 @@ resource "local_file" "ssh_key_public_pem" {
 }
 
 resource "aws_key_pair" "ssh_key_rancher" {
-  key_name_prefix = "ssh-aws-instances-rancher"
-  public_key      = tls_private_key.ssh_key_rancher.public_key_openssh
+  key_name   = "ssh-aws-instances-rancher"
+  public_key = tls_private_key.ssh_key_rancher.public_key_openssh
 }
