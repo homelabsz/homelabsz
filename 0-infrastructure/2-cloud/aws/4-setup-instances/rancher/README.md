@@ -46,6 +46,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_dns_zone"></a> [dns\_zone](#input\_dns\_zone) | n/a | `string` | `"lpsm.dev"` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | n/a | `string` | `"pocs"` | no |
+| <a name="input_instance_profile"></a> [instance\_profile](#input\_instance\_profile) | A pre-defined profile to attach to the instance (default is to build our own) | `string` | `"custom-role-ssm"` | no |
 | <a name="input_rancher_admin_password"></a> [rancher\_admin\_password](#input\_rancher\_admin\_password) | Rancher admin password | `string` | `""` | no |
 | <a name="input_rancher_server_url"></a> [rancher\_server\_url](#input\_rancher\_server\_url) | Rancher Server URL | `string` | `""` | no |
 | <a name="input_rancher_version"></a> [rancher\_version](#input\_rancher\_version) | Rancher version | `string` | `"v2.7.4"` | no |
