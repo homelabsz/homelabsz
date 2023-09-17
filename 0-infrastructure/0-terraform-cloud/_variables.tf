@@ -10,6 +10,12 @@ variable "tf_hostname" {
   description = "The hostname of the TFC or TFE instance you'd like to use with AWS"
 }
 
+variable "tf_aws_audience" {
+  type        = string
+  default     = "aws.workload.identity"
+  description = "The audience value to use in run identity tokens"
+}
+
 variable "environment" {
   type        = string
   description = "AWS environment name"

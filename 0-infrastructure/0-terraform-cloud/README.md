@@ -60,6 +60,7 @@ No modules.
 | <a name="input_environment"></a> [environment](#input\_environment) | AWS environment name | `string` | `"pocs"` | no |
 | <a name="input_profile"></a> [profile](#input\_profile) | AWS profile name as set in the shared configuration and credentials files | `string` | `"personal"` | no |
 | <a name="input_region"></a> [region](#input\_region) | AWS region where the provider will operate | `string` | `"us-east-1"` | no |
+| <a name="input_tf_aws_audience"></a> [tf\_aws\_audience](#input\_tf\_aws\_audience) | The audience value to use in run identity tokens | `string` | `"aws.workload.identity"` | no |
 | <a name="input_tf_hostname"></a> [tf\_hostname](#input\_tf\_hostname) | The hostname of the TFC or TFE instance you'd like to use with AWS | `string` | `"app.terraform.io"` | no |
 | <a name="input_tf_organization"></a> [tf\_organization](#input\_tf\_organization) | Name of the organization in Terraform Cloud | `string` | `"lpsm-dev"` | no |
 
