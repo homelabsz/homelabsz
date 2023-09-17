@@ -1,7 +1,7 @@
 resource "aws_instance" "rancher_server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3a.medium"
-  key_name      = aws_key_pair.ssh_key_rancher.key_name
+  key_name      = aws_key_pair.this.key_name
   user_data = templatefile("${path.module}/files/rancher_server", {
     admin_password        = var.rancher_admin_password
     docker_version_server = "20.10"
