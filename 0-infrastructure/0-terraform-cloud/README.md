@@ -47,6 +47,8 @@ No modules.
 | [tfe_workspace.aws_kubernetes](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.aws_network](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.aws_rancher](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.aws_services_rabbit](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.aws_services_rds](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.lpsm_cloud](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.lpsm_dev](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.scaleway_kubernetes](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |

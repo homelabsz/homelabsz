@@ -128,3 +128,23 @@ resource "tfe_workspace" "aws_kubernetes" {
     prevent_destroy = true
   }
 }
+
+resource "tfe_workspace" "aws_services_rabbit" {
+  name         = "setup-aws-services-rabbit"
+  organization = data.tfe_organization.this.name
+  project_id   = tfe_project.aws.id
+  tag_names    = ["cloud-provider", "cloud-services", "queue"]
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "tfe_workspace" "aws_services_rds" {
+  name         = "setup-aws-services-rds"
+  organization = data.tfe_organization.this.name
+  project_id   = tfe_project.aws.id
+  tag_names    = ["cloud-provider", "cloud-services", "database"]
+  lifecycle {
+    prevent_destroy = true
+  }
+}

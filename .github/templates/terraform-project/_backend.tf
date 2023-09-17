@@ -1,4 +1,5 @@
-/*terraform {
+/*
+terraform {
   backend "remote" {
     organization = "<organization-name>"
     workspaces {
