@@ -3,7 +3,7 @@ resource "cloudflare_ruleset" "block" {
   name        = "block"
   description = "Firewall rule to block"
   phase       = "http_request_firewall_custom"
-  zone_id = data.cloudflare_zone.this.id
+  zone_id     = data.cloudflare_zone.this.id
   rules {
     action      = "block"
     description = "Expression to block countries"

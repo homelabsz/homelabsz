@@ -2,7 +2,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.4 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
 | <a name="requirement_cloudflare"></a> [cloudflare](#requirement\_cloudflare) | ~> 4.14 |
 
 ## Providers
@@ -19,6 +19,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [cloudflare_record.hashnode_blog](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_ruleset.block](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/ruleset) | resource |
 | [cloudflare_zone_settings_override.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/zone_settings_override) | resource |
 | [cloudflare_zone.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/zone) | data source |
@@ -32,4 +33,6 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_cloudflare_zone"></a> [cloudflare\_zone](#output\_cloudflare\_zone) | Output Cloudflare Zone information |

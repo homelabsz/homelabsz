@@ -1,5 +1,5 @@
 resource "cloudflare_record" "hashnode_blog" {
-  zone_id = cloudflare_zone.this.id
+  zone_id = data.cloudflare_zone.this.id
   name    = "blog"
   type    = "CNAME"
   value   = "hashnode.network"
