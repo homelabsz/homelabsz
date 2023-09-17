@@ -3,7 +3,7 @@ provider "aws" {
   default_tags {
     tags = {
       Account     = local.account
-      Application = "setup-aws-instances-bastion"
+      Application = "setup-aws-instances-gitlab-server"
       CostCenter  = "root-services"
       Environment = var.environment
       ManagedBy   = "terraform"
