@@ -3,7 +3,7 @@ provider "aws" {
   default_tags {
     tags = {
       Account     = local.account
-      Application = "setup-aws-iam"
+      Application = "setup-aws-account"
       CostCenter  = "root-services"
       Environment = var.environment
       ManagedBy   = "terraform"

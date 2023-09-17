@@ -40,7 +40,7 @@ resource "tfe_workspace" "scaleway_rancher" {
 
 # Project AWS
 resource "tfe_workspace" "aws_iam" {
-  name         = "setup-aws-iam"
+  name         = "setup-aws-account"
   organization = data.tfe_organization.this.name
   project_id   = tfe_project.aws.id
   tag_names    = ["cloud-provider"]

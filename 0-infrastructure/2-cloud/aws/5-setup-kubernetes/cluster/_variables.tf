@@ -1,11 +1,13 @@
 variable "environment" {
-  type    = string
-  default = "pocs"
+  type        = string
+  description = "AWS environment name"
+  default     = "pocs"
 }
 
 variable "region" {
-  type    = string
-  default = "us-east-1"
+  type        = string
+  description = "AWS region where the provider will operate"
+  default     = "us-east-1"
 }
 
 variable "eks_version" {

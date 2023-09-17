@@ -44,15 +44,15 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_dns_zone"></a> [dns\_zone](#input\_dns\_zone) | n/a | `string` | `"lpsm.dev"` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | n/a | `string` | `"pocs"` | no |
-| <a name="input_instance_profile"></a> [instance\_profile](#input\_instance\_profile) | A pre-defined profile to attach to the instance (default is to build our own) | `string` | `"custom-role-ssm"` | no |
+| <a name="input_dns_zone"></a> [dns\_zone](#input\_dns\_zone) | AWS Route 53 Zone name | `string` | `"lpsm.dev"` | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | AWS environment name | `string` | `"pocs"` | no |
+| <a name="input_instance_profile"></a> [instance\_profile](#input\_instance\_profile) | A pre-defined profile to attach to the instance (default is to build our own) | `string` | `"custom-role-ec2-ssm-cw"` | no |
 | <a name="input_rancher_admin_password"></a> [rancher\_admin\_password](#input\_rancher\_admin\_password) | Rancher admin password | `string` | `""` | no |
 | <a name="input_rancher_server_url"></a> [rancher\_server\_url](#input\_rancher\_server\_url) | Rancher Server URL | `string` | `""` | no |
 | <a name="input_rancher_version"></a> [rancher\_version](#input\_rancher\_version) | Rancher version | `string` | `"v2.7.4"` | no |
-| <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"us-east-1"` | no |
-| <a name="input_subnet_name"></a> [subnet\_name](#input\_subnet\_name) | n/a | `string` | `""` | no |
-| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | n/a | `string` | `""` | no |
+| <a name="input_region"></a> [region](#input\_region) | AWS region where the provider will operate | `string` | `"us-east-1"` | no |
+| <a name="input_subnet_name"></a> [subnet\_name](#input\_subnet\_name) | AWS subnet name | `string` | `""` | no |
+| <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | AWS VPC name | `string` | `""` | no |
 
 ## Outputs
 
