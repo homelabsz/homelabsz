@@ -50,3 +50,16 @@ resource "aws_security_group_rule" "allow_https" {
     create_before_destroy = true
   }
 }
+
+resource "aws_security_group_rule" "public_out" {
+  security_group_id = aws_security_group.rancher.id
+  type              = "egress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = "-1"
+  cidr_blocks       = ["0.0.0.0/0"]
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
