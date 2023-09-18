@@ -11,26 +11,25 @@ variable "region" {
 }
 
 variable "eks_version" {
-  type    = string
-  default = "1.27"
+  type        = string
+  description = "Kubernetes version number"
+  default     = "1.27"
 }
 
-variable "eks_subnets" {
-  type    = list(string)
-  default = [""]
+variable "eks_vpc_name" {
+  type        = list(string)
+  description = "Kubernetes EKS VPC name"
+  default     = [""]
 }
 
-variable "cidr_blocks" {
-  type    = list(string)
-  default = [""]
-}
-
-variable "vpc_id" {
-  type    = string
-  default = ""
+variable "eks_subnet_names" {
+  type        = list(string)
+  description = "Kubernetes EKS Subnets name"
+  default     = [""]
 }
 
 variable "nodes_instances_sizes" {
+  type = list(string)
   default = [
     "t3a.medium"
   ]

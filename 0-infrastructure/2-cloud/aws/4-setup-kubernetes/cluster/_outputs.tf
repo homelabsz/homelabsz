@@ -6,7 +6,7 @@ output "kubernetes_cluster_arn" {
   value = aws_eks_cluster.this.arn
 }
 
-output "kubernetes_api_endpoint" {
+output "kubernetes_cluster_api_endpoint" {
   value = aws_eks_cluster.this.endpoint
 }
 

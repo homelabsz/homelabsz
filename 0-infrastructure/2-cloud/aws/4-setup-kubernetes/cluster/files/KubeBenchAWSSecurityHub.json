@@ -1,0 +1,12 @@
+{
+  "Version" : "2012-10-17",
+  "Statement" : [
+    {
+      "Effect" : "Allow",
+      "Action" : [
+        "securityhub:*"
+      ],
+      "Resource" : "arn:aws:securityhub:${REGION}::product/aqua-security/kube-bench"
+    }
+  ]
+}

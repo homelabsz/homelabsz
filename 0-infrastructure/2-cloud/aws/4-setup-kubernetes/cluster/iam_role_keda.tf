@@ -6,7 +6,7 @@ data "aws_iam_policy_document" "keda_assume_role" {
     condition {
       test     = "StringEquals"
       variable = "${replace(aws_iam_openid_connect_provider.eks.url, "https://", "")}:sub"
-      values   = ["system:serviceaccount:kube:keda-operator"]
+      values   = ["system:serviceaccount:keda:keda"]
     }
 
     principals {
@@ -16,10 +16,13 @@ data "aws_iam_policy_document" "keda_assume_role" {
   }
 }
 
-
 resource "aws_iam_role" "keda" {
   name               = format("custom-role-%s-keda", local.cluster_name)
   assume_role_policy = data.aws_iam_policy_document.keda_assume_role.json
+  tags = {
+    "ServiceAccountName"      = "keda"
+    "ServiceAccountNameSpace" = "keda"
+  }
 }
 
 resource "aws_iam_policy" "keda_policy" {
