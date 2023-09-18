@@ -148,3 +148,13 @@ resource "tfe_workspace" "aws_services_rds" {
     prevent_destroy = true
   }
 }
+
+resource "tfe_workspace" "aws_services_security_hub" {
+  name         = "setup-aws-services-security-hub"
+  organization = data.tfe_organization.this.name
+  project_id   = tfe_project.aws.id
+  tag_names    = ["cloud-provider", "cloud-services", "security"]
+  lifecycle {
+    prevent_destroy = true
+  }
+}

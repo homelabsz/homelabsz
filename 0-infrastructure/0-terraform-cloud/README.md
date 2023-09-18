@@ -49,6 +49,7 @@ No modules.
 | [tfe_workspace.aws_rancher](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.aws_services_rabbit](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.aws_services_rds](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
+| [tfe_workspace.aws_services_security_hub](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.lpsm_cloud](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.lpsm_dev](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_workspace.scaleway_kubernetes](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
@@ -63,15 +64,14 @@ No modules.
 | <a name="input_environment"></a> [environment](#input\_environment) | AWS environment name | `string` | `"pocs"` | no |
 | <a name="input_profile"></a> [profile](#input\_profile) | AWS profile name as set in the shared configuration and credentials files | `string` | `"personal"` | no |
 | <a name="input_region"></a> [region](#input\_region) | AWS region where the provider will operate | `string` | `"us-east-1"` | no |
-| <a name="input_tf_aws_audience"></a> [tf\_aws\_audience](#input\_tf\_aws\_audience) | The audience value to use in run identity tokens | `string` | `"aws.workload.identity"` | no |
-| <a name="input_tf_hostname"></a> [tf\_hostname](#input\_tf\_hostname) | The hostname of the TFC or TFE instance you'd like to use with AWS | `string` | `"app.terraform.io"` | no |
-| <a name="input_tf_organization"></a> [tf\_organization](#input\_tf\_organization) | Name of the organization in Terraform Cloud | `string` | `"lpsm-dev"` | no |
+| <a name="input_tfc_aws_audience"></a> [tfc\_aws\_audience](#input\_tfc\_aws\_audience) | The audience value to use in run identity tokens | `string` | `"aws.workload.identity"` | no |
+| <a name="input_tfc_hostname"></a> [tfc\_hostname](#input\_tfc\_hostname) | The hostname of the TFC or TFE instance you'd like to use with AWS | `string` | `"app.terraform.io"` | no |
+| <a name="input_tfc_organization"></a> [tfc\_organization](#input\_tfc\_organization) | Name of the organization in Terraform Cloud | `string` | `"lpsm-dev"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_tf_aws_policy_arn"></a> [tf\_aws\_policy\_arn](#output\_tf\_aws\_policy\_arn) | The ARN of the AWS IAM policy |
-| <a name="output_tf_aws_role_arn"></a> [tf\_aws\_role\_arn](#output\_tf\_aws\_role\_arn) | ARN for trust relationship role |
-| <a name="output_tf_aws_role_openid_claims"></a> [tf\_aws\_role\_openid\_claims](#output\_tf\_aws\_role\_openid\_claims) | OpenID Claims for trust relationship |
-| <a name="output_tfc_organization_name"></a> [tfc\_organization\_name](#output\_tfc\_organization\_name) | The name of the organization in the terraform |
+| <a name="output_tfc_aws_policy_arn"></a> [tfc\_aws\_policy\_arn](#output\_tfc\_aws\_policy\_arn) | The ARN of the AWS IAM policy |
+| <a name="output_tfc_aws_role_arn"></a> [tfc\_aws\_role\_arn](#output\_tfc\_aws\_role\_arn) | ARN for trust relationship role |
+| <a name="output_tfc_aws_role_openid_claims"></a> [tfc\_aws\_role\_openid\_claims](#output\_tfc\_aws\_role\_openid\_claims) | OpenID Claims for trust relationship |

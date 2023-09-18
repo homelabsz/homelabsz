@@ -2,7 +2,7 @@
 resource "tfe_variable_set" "aws" {
   name         = "AWS Varset"
   description  = "Variable set applied in AWS project."
-  organization = var.tf_organization
+  organization = var.tfc_organization
 }
 
 resource "tfe_project_variable_set" "aws" {

@@ -1,7 +1,7 @@
 data "tls_certificate" "tfc_certificate" {
-  url = format("https://%s", var.tf_hostname)
+  url = format("https://%s", var.tfc_hostname)
 }
 
 data "tfe_organization" "this" {
-  name = var.tf_organization
+  name = var.tfc_organization
 }
