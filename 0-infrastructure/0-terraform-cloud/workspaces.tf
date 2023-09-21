@@ -30,9 +30,10 @@ resource "tfe_workspace" "scaleway_kubernetes" {
 }
 
 resource "tfe_workspace" "scaleway_ssh_keys" {
-  name         = "setup-scaleway-ssh-keys"
-  organization = data.tfe_organization.this.name
-  project_id   = tfe_project.scaleway.id
+  name           = "setup-scaleway-ssh-keys"
+  organization   = data.tfe_organization.this.name
+  project_id     = tfe_project.scaleway.id
+  execution_mode = "local"
   lifecycle {
     prevent_destroy = true
   }

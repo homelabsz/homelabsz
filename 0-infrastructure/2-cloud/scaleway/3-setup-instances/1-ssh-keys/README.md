@@ -2,7 +2,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | ~> 2.4 |
 | <a name="requirement_scaleway"></a> [scaleway](#requirement\_scaleway) | ~> 2.27 |
 | <a name="requirement_tls"></a> [tls](#requirement\_tls) | ~> 4.0 |
