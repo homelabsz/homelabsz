@@ -7,30 +7,14 @@ repositories:
   url: https://argoproj.github.io/argo-helm
 - name: cert-manager
   url: https://charts.jetstack.io
-- name: descheduler
-  url: https://kubernetes-sigs.github.io/descheduler
 - name: external-dns
   url: https://kubernetes-sigs.github.io/external-dns
-- name: echo-server
-  url: https://ealenn.github.io/charts
+- name: external-secrets
+  url: https://charts.external-secrets.io
 - name: ingress-nginx
-  url: https://kubernetes.github.io/ingress-nginx
-- name: kubernetes-replicator
-  url: https://helm.mittwald.de
-- name: reloader
-  url: https://stakater.github.io/stakater-charts
+  url: https://kubernetes.github.io/ingress-nginxs
 ---
 releases:
-# Setup Descheduler
-- name: descheduler
-  namespace: kube-system
-  chart: ./2-system/descheduler
-  createNamespace: true
-# Setup Reloader
-- name: reloader
-  namespace: reloader
-  chart: ./2-system/reloader
-  createNamespace: true
 # Setup External Secrets
 - name: external-secrets
   namespace: external-secrets
@@ -41,7 +25,7 @@ releases:
   chart: ./2-system/external-secrets-scaleway
   createNamespace: true
   needs:
-  - external-secrets
+  - external-secrets/external-secrets
 # Setup Cert Manager
 - name: cert-manager
   namespace: cert-manager
@@ -52,43 +36,14 @@ releases:
   chart: ./2-system/cert-manager-cloudflare
   createNamespace: true
   needs:
-  - cert-manager
-- name: origin-ca-issuer
-  namespace: origin-ca-issuer
-  chart: ./2-system/origin-ca-issuer
-  createNamespace: true
-  needs:
   - cert-manager/cert-manager
 # Setup Network
 - name: ingress-nginx
   namespace: ingress-nginx
   chart: ./2-system/ingress-nginx
   createNamespace: true
-  needs:
-  - cert-manager/cert-manager
-- name: external-dns
-  namespace: external-dns
-  chart: ./2-system/external-dns
-  createNamespace: true
-  needs:
-  - external-secrets/external-secrets
-# Setup ArgoCD
-- name: argocd
-  namespace: argocd
-  chart: ./1-bootstrap/argocd
-  createNamespace: true
-  needs:
-  - external-secrets/external-secrets
-# Setup Kubernetes Replicator
-- name: kubernetes-replicator
-  namespace: kubernetes-replicator
-  chart: ./3-plataform/kubernetes-replicator
-  createNamespace: true
-# Setup Apps
+# Setup Echo Server
 - name: echo-server
   namespace: demo
   chart: ./4-apps/echo-server
   createNamespace: true
-  needs:
-  - cert-manager/cert-manager
-  - origin-ca-issuer/origin-ca-issuer

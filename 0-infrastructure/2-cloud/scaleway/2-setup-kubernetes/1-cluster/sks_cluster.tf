@@ -3,7 +3,7 @@ resource "scaleway_k8s_cluster" "pocs_services" {
   type                        = "kapsule"
   description                 = "Scaleway Kubernetes ${var.cluster_name}"
   version                     = var.cluster_version
-  cni                         = "calico"
+  cni                         = "cilium"
   delete_additional_resources = true
   tags                        = ["managed-by=terraform"]
   autoscaler_config {

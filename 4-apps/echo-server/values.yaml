@@ -2,19 +2,15 @@
 echo-server:
   replicaCount: 1
   ingress:
-    enabled: true
+    enabled: false
     ingressClassName: nginx
     annotations:
       cert-manager.io/issuer: production-issuer
-      cert-manager.io/issuer-kind: OriginIssuer
-      cert-manager.io/issuer-group: cert-manager.k8s.cloudflare.com
-      external-dns.beta.kubernetes.io/hostname: echo-server.lpsm.dev
-      external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
     hosts:
-      - host: echo-server.lpsm.dev
+      - host: echo-server.lpsm.cloud
         paths:
           - /
     tls:
       - hosts:
-          - echo-server.lpsm.dev
+          - echo-server.lpsm.cloud
         secretName: echo-server-tls

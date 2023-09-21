@@ -5,14 +5,17 @@ metadata:
   name: letsencrypt-production
 spec:
   acme:
-    email: lpsm-dev@protonmail.com
+    email: {{ .Values.cloudflare.email }}
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-production
     solvers:
-      - http01:
-          ingress:
-            class: nginx
+      - dns01:
+          cloudflare:
+            email: {{ .Values.cloudflare.email }}
+            apiTokenSecretRef:
+              name: cloudflare-secret-properties
+              key: api-token
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -20,11 +23,14 @@ metadata:
   name: letsencrypt-staging
 spec:
   acme:
-    email: lpsm-dev@protonmail.com
+    email: {{ .Values.cloudflare.email }}
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-staging
     solvers:
-      - http01:
-          ingress:
-            class: nginx
+      - dns01:
+          cloudflare:
+            email: {{ .Values.cloudflare.email }}
+            apiTokenSecretRef:
+              name: cloudflare-secret-properties
+              key: api-token
