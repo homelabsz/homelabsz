@@ -17,7 +17,7 @@ resource "scaleway_instance_server" "rancher" {
     rancher_server_url    = var.rancher_server_url
   })
   root_volume {
-    size_in_gb            = 15
+    size_in_gb            = 20
     delete_on_termination = true
   }
   tags = ["pocs-services", "rancher", "managed-by=terraform"]
