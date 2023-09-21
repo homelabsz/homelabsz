@@ -42,3 +42,8 @@ releases:
   createNamespace: true
   needs:
   - cert-manager
+# Setup Echo-Server
+- name: echo-server
+  namespace: demo
+  chart: ./4-apps/echo-server
+  createNamespace: true

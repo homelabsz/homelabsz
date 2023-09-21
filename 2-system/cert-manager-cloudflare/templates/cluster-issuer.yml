@@ -16,6 +16,10 @@ spec:
             apiTokenSecretRef:
               name: cloudflare-secret-properties
               key: api-token
+        selector:
+          dnsZones:
+          - "lpsm.cloud"
+          - "*.lpsm.cloud"
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -34,3 +38,7 @@ spec:
             apiTokenSecretRef:
               name: cloudflare-secret-properties
               key: api-token
+        selector:
+          dnsZones:
+          - "lpsm.cloud"
+          - "*.lpsm.cloud"
