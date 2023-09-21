@@ -29,8 +29,17 @@ resource "tfe_workspace" "scaleway_kubernetes" {
   }
 }
 
+resource "tfe_workspace" "scaleway_ssh_keys" {
+  name         = "setup-scaleway-ssh-keys"
+  organization = data.tfe_organization.this.name
+  project_id   = tfe_project.scaleway.id
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
 resource "tfe_workspace" "scaleway_rancher" {
-  name         = "setup-scaleway-rancher"
+  name         = "setup-scaleway-instances-rancher"
   organization = data.tfe_organization.this.name
   project_id   = tfe_project.scaleway.id
   lifecycle {

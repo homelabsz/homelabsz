@@ -1,3 +1,3 @@
 data "cloudflare_zone" "lpsm_dev" {
-  name = "lpsm.dev"
+  name = var.cloudflare_zone_name
 }

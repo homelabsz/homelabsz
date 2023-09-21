@@ -1,13 +1,15 @@
-variable "region" {
+variable "access_key" {
   type        = string
-  description = "Scaleway region that will be used as default value for all resources"
-  default     = "fr-par"
+  description = "Scaleway access key"
+  default     = ""
+  sensitive   = true
 }
 
-variable "zone" {
+variable "secret_key" {
   type        = string
-  description = "Scaleway zone that will be used as default value for all resources"
-  default     = "fr-par-1"
+  description = "Scaleway secret key"
+  default     = ""
+  sensitive   = true
 }
 
 variable "project_id" {
@@ -22,18 +24,16 @@ variable "organization_id" {
   default     = ""
 }
 
-variable "access_key" {
+variable "region" {
   type        = string
-  description = "Scaleway access key"
-  default     = ""
-  sensitive   = true
+  description = "Scaleway region that will be used as default value for all resources"
+  default     = "fr-par"
 }
 
-variable "secret_key" {
+variable "zone" {
   type        = string
-  description = "Scaleway secret key"
-  default     = ""
-  sensitive   = true
+  description = "Scaleway zone that will be used as default value for all resources"
+  default     = "fr-par-1"
 }
 
 variable "rancher_version" {
@@ -59,4 +59,10 @@ variable "cloudflare_api_token" {
   description = "The API Token for operations"
   default     = ""
   sensitive   = true
+}
+
+variable "cloudflare_zone_name" {
+  type        = string
+  description = "The DNS zone name in Cloudflare"
+  default     = "lpsm.cloud"
 }
