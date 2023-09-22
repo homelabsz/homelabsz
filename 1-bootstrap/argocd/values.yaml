@@ -20,7 +20,7 @@ argo-cd:
     extraArgs:
       - --insecure
     config:
-      kustomize.buildOptions: "--enable-alpha-plugins --enable-helm"
+      kustomize.buildOptions: "--enable-alpha-plugins"
       repositories: |
         - type: helm
           name: argo-cd
