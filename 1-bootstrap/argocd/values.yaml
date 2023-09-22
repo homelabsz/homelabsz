@@ -12,22 +12,18 @@ argo-cd:
       admin.enabled: true
       timeout.reconciliation: 15s
       statusbadge.enabled: true
+      dex.config: |
+        connectors:
+          - type: github
+            id: github
+            name: GitHub
+            config:
+              clientID: $oauth-client-github:github_oauth_client_id
+              clientSecret: $oauth-client-github:github_oauth_client_secret
+              orgs:
+                - name: homelabsz
     rbac:
       create: true
-      policy.default: role:readonly
-      policy.csv: |
-        p, role:org-admin, applications, *, */*, allow
-        p, role:org-admin, clusters, get, *, allow
-        p, role:org-admin, repositories, get, *, allow
-        p, role:org-admin, repositories, create, *, allow
-        p, role:org-admin, repositories, update, *, allow
-        p, role:org-admin, repositories, delete, *, allow
-        p, role:org-admin, projects, get, *, allow
-        p, role:org-admin, projects, create, *, allow
-        p, role:org-admin, projects, update, *, allow
-        p, role:org-admin, projects, delete, *, allow
-        p, role:org-admin, logs, get, *, allow
-        p, role:org-admin, exec, create, */*, allow
   controller:
     replicas: 1
   server:
@@ -35,7 +31,7 @@ argo-cd:
     extraArgs:
       - --insecure
     config:
-      kustomize.buildOptions: "--enable-alpha-plugins"
+      kustomize.buildOptions: "--enable-alpha-plugins --enable-helm"
       repositories: |
         - type: helm
           name: argo-cd
@@ -64,9 +60,28 @@ argo-cd:
           secretName: argo-cd-tls
   repoServer:
     replicas: 1
-  applicationSet:
-    replicaCount: 1
   dex:
-    enabled: false
-  redis-ha:
-    enabled: false
+    resources:
+      requests:
+        cpu: 50m
+        memory: 32Mi
+      limits:
+        cpu: 100m
+        memory: 64Mi
+  applicationSet:
+    enabled: true
+    resources:
+      requests:
+        cpu: 100m
+        memory: 64Mi
+      limits:
+        cpu: 200m
+        memory: 128Mi
+  redis:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 64Mi
+      limits:
+        cpu: 200m
+        memory: 128Mi

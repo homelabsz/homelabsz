@@ -12,6 +12,24 @@ apps:
   path: 1-bootstrap/app-of-apps
   extraSyncOptions:
   - Replace=true
+# ArgoCD
+- name: argocd
+  server: https://kubernetes.default.svc
+  namespace: argocd
+  path: 1-bootstrap/argocd
+  extraSyncOptions:
+  - CreateNamespace=true
+  - ServerSideApply=true
+  - ApplyOutOfSyncOnly=true
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jqPathExpressions:
+    - .spec.template.spec.containers[].imagePullPolicy
+  - group: apps
+    kind: StatefulSet
+    jqPathExpressions:
+    - .spec.template.spec.containers[].imagePullPolicy
 # Ingress Nginx
 - name: ingress-nginx
   namespace: nginx-ingress
