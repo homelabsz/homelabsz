@@ -59,28 +59,5 @@ argo-cd:
           secretName: argo-cd-tls
   repoServer:
     replicas: 1
-  dex:
-    resources:
-      requests:
-        cpu: 50m
-        memory: 32Mi
-      limits:
-        cpu: 100m
-        memory: 64Mi
   applicationSet:
     enabled: true
-    resources:
-      requests:
-        cpu: 100m
-        memory: 64Mi
-      limits:
-        cpu: 200m
-        memory: 128Mi
-  redis:
-    resources:
-      requests:
-        cpu: 100m
-        memory: 64Mi
-      limits:
-        cpu: 200m
-        memory: 128Mi
