@@ -11,15 +11,14 @@ argo-cd:
       exec.enabled: true
       admin.enabled: true
       timeout.reconciliation: 15s
-      statusbadge.enabled: true
       dex.config: |
         connectors:
           - type: github
             id: github
             name: GitHub
             config:
-              clientID: $oauth-client-github:github_oauth_client_id
-              clientSecret: $oauth-client-github:github_oauth_client_secret
+              clientID: $dex-secret:clientID
+              clientSecret: $dex-secret:clientSecret
               orgs:
                 - name: homelabsz
     rbac:
