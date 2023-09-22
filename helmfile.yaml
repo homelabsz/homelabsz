@@ -36,7 +36,7 @@ releases:
   namespace: cert-manager
   chart: ./2-system/cert-manager
   createNamespace: true
-- name: cert-manager-cloudflare
+- name: cluster-issuers
   namespace: cert-manager
   chart: ./2-system/cluster-issuers
   createNamespace: true
