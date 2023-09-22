@@ -1,0 +1,51 @@
+---
+helmDefaults:
+  kubeContext: scalaway-personal-pocs-services-001
+---
+repositories:
+- name: argo-cd
+  url: https://argoproj.github.io/argo-helm
+- name: cert-manager
+  url: https://charts.jetstack.io
+- name: external-dns
+  url: https://kubernetes-sigs.github.io/external-dns
+- name: external-secrets
+  url: https://charts.external-secrets.io
+- name: ingress-nginx
+  url: https://kubernetes.github.io/ingress-nginx
+---
+releases:
+# Setup Network
+- name: ingress-nginx
+  namespace: ingress-nginx
+  chart: ./2-system/ingress-nginx
+  createNamespace: true
+# Setup External Secrets
+- name: external-secrets
+  namespace: external-secrets
+  chart: ./2-system/external-secrets
+  createNamespace: true
+#- name: external-secrets-scaleway
+#  namespace: external-secrets
+#  chart: ./2-system/external-secrets-scaleway
+#  createNamespace: true
+#  needs:
+#  - scalaway-personal-pocs-services-001/external-secrets/external-secrets
+# Setup Certificates
+- name: cert-manager
+  namespace: cert-manager
+  chart: ./2-system/cert-manager
+  createNamespace: true
+#- name: cluster-issuers
+#  namespace: cert-manager
+#  chart: ./2-system/cluster-issuers
+#  createNamespace: true
+#  needs:
+#  - scalaway-personal-pocs-services-001/cert-manager/cert-manager
+# Setup Echo-Server
+#- name: echo-server
+#  namespace: demo
+#  chart: ./4-apps/echo-server
+#  createNamespace: true
+#  needs:
+#  - scalaway-personal-pocs-services-001/cert-manager/cert-manager
