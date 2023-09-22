@@ -6,6 +6,7 @@ echo-server:
     ingressClassName: nginx
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-production
+      cert-manager.io/acme-challenge-type: dns01
     hosts:
       - host: echo-server.lpsm.cloud
         paths:

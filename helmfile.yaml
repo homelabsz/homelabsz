@@ -30,20 +30,22 @@ releases:
   chart: ./2-system/external-secrets-scaleway
   createNamespace: true
   needs:
-  - external-secrets
-# Setup Cert Manager
+  - scalaway-personal-pocs-services-001/external-secrets/external-secrets
+# Setup Certificates
 - name: cert-manager
   namespace: cert-manager
   chart: ./2-system/cert-manager
   createNamespace: true
 - name: cert-manager-cloudflare
   namespace: cert-manager
-  chart: ./2-system/cert-manager-cloudflare
+  chart: ./2-system/cluster-issuers
   createNamespace: true
   needs:
-  - cert-manager
+  - scalaway-personal-pocs-services-001/cert-manager/cert-manager
 # Setup Echo-Server
 - name: echo-server
   namespace: demo
   chart: ./4-apps/echo-server
   createNamespace: true
+  needs:
+  - scalaway-personal-pocs-services-001/cert-manager/cert-manager
