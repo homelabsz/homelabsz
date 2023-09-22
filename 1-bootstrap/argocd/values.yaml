@@ -46,15 +46,20 @@ argo-cd:
           insecure: true
           insecureIgnoreHostKey: true
           sshPrivateKeySecret:
-            key: sshPrivateKey
+            key: ssh_key_github_private
             name: ssh-github-gitops
     ingress:
       enabled: true
       ingressClassName: "nginx"
       annotations:
-        external-dns.alpha.kubernetes.io/hostname: argo-cd.lpsm.cloud
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        cert-manager.io/acme-challenge-type: dns01
       hosts:
       - argo-cd.lpsm.cloud
+      tls:
+      - hosts:
+        - argo-cd.lpsm.cloud
+        secretName: argo-cd-tls
   repoServer:
     replicas: 1
   applicationSet:

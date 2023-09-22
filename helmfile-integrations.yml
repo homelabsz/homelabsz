@@ -1,0 +1,26 @@
+---
+helmDefaults:
+  kubeContext: scalaway-personal-pocs-services-001
+---
+repositories:
+- name: argo-cd
+  url: https://argoproj.github.io/argo-helm
+---
+releases:
+# Setup External Secrets
+- name: external-secrets-scaleway
+  namespace: external-secrets
+  chart: ./2-system/external-secrets-scaleway
+  createNamespace: true
+# Setup Certificates
+- name: cluster-issuers
+  namespace: cert-manager
+  chart: ./2-system/cluster-issuers
+  createNamespace: true
+# Setup ArgoCD
+- name: argocd
+  namespace: argocd
+  chart: ./1-bootstrap/argocd
+  createNamespace: true
+  needs:
+  - scalaway-personal-pocs-services-001/external-secrets/external-secrets-scaleway
