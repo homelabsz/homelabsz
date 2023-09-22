@@ -14,7 +14,7 @@ apps:
   - Replace=true
 # Ingress Nginx
 - name: ingress-nginx
-  namespace: nginx-ingress
+  namespace: ingress-nginx
   server: https://kubernetes.default.svc
   path: 2-system/ingress-nginx
   extraSyncOptions:
