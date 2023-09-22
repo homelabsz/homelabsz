@@ -5,7 +5,7 @@ echo-server:
     enabled: true
     ingressClassName: nginx
     annotations:
-      cert-manager.io/issuer: production-issuer
+      cert-manager.io/cluster-issuer: letsencrypt-production
     hosts:
       - host: echo-server.lpsm.cloud
         paths:

@@ -20,19 +20,20 @@ resource "tfe_workspace" "lpsm_cloud" {
 }
 
 # Project Scaleway
-resource "tfe_workspace" "scaleway_kubernetes" {
-  name         = "setup-scaleway-kubernetes"
-  organization = data.tfe_organization.this.name
-  project_id   = tfe_project.scaleway.id
+resource "tfe_workspace" "scaleway_account" {
+  name           = "setup-scaleway-account"
+  organization   = data.tfe_organization.this.name
+  project_id     = tfe_project.scaleway.id
+  execution_mode = "local"
   lifecycle {
     prevent_destroy = true
   }
 }
 
-resource "tfe_workspace" "scaleway_ssh_keys" {
-  name           = "setup-scaleway-ssh-keys"
-  organization   = data.tfe_organization.this.name
-  project_id     = tfe_project.scaleway.id
+resource "tfe_workspace" "scaleway_kubernetes" {
+  name         = "setup-scaleway-kubernetes"
+  organization = data.tfe_organization.this.name
+  project_id   = tfe_project.scaleway.id
   execution_mode = "local"
   lifecycle {
     prevent_destroy = true
@@ -49,7 +50,7 @@ resource "tfe_workspace" "scaleway_rancher" {
 }
 
 # Project AWS
-resource "tfe_workspace" "aws_iam" {
+resource "tfe_workspace" "aws_account" {
   name         = "setup-aws-account"
   organization = data.tfe_organization.this.name
   project_id   = tfe_project.aws.id

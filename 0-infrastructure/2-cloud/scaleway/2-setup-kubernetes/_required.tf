@@ -1,6 +1,10 @@
 terraform {
-  required_version = "~> 1.3"
+  required_version = "~> 1.5"
   required_providers {
+    kubernetes = {
+      source  = "hashicorp/kubernetes"
+      version = "~> 2.23"
+    }
     scaleway = {
       source  = "scaleway/scaleway"
       version = "~> 2.27"

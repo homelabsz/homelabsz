@@ -5,6 +5,14 @@ resource "local_file" "kubeconfig" {
 
 resource "null_resource" "kubeconfig" {
   triggers = {
+    host                   = scaleway_k8s_cluster.pocs_services.kubeconfig[0].host
+    token                  = scaleway_k8s_cluster.pocs_services.kubeconfig[0].token
+    cluster_ca_certificate = scaleway_k8s_cluster.pocs_services.kubeconfig[0].cluster_ca_certificate
+  }
+}
+
+resource "null_resource" "add_kubeconfig" {
+  triggers = {
     timestamp = "${timestamp()}"
   }
   provisioner "local-exec" {
