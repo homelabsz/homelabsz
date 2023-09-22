@@ -57,6 +57,14 @@ apps:
   - CreateNamespace=true
   - ServerSideApply=true
   - ApplyOutOfSyncOnly=true
+# Priority Class
+- name: priority-class
+  server: https://kubernetes.default.svc
+  path: 2-system/priority-class
+  extraSyncOptions:
+  - CreateNamespace=true
+  - ServerSideApply=true
+  - ApplyOutOfSyncOnly=true
 # Echo-Server
 - name: echo-server
   server: https://kubernetes.default.svc
