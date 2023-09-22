@@ -1,5 +1,5 @@
 ---
-argo-cd:
+argocd:
   crds:
     install: true
   global:
@@ -32,9 +32,6 @@ argo-cd:
     config:
       kustomize.buildOptions: "--enable-alpha-plugins --enable-helm"
       repositories: |
-        - type: helm
-          name: argo-cd
-          url: https://argoproj.github.io/argo-helm
         - type: git
           name: cluster-management
           url: git@github.com:homelabsz/homelabsz.git

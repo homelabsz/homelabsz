@@ -8,7 +8,6 @@ home: https://github.com/homelabsz/homelabsz
 icon: https://raw.githubusercontent.com/cncf/artwork/7408f84d4f146956c749eb4b61a1d87f81d54f4f/projects/argo/icon/color/argo-icon-color.svg
 keywords:
 - argocd
-- argo-cd
 - apps
 - applications
 - app-of-apps
