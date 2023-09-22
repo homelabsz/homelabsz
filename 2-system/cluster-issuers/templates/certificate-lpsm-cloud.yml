@@ -7,8 +7,6 @@ spec:
   dnsNames:
   - "*.lpsm.cloud"
   - "lpsm.cloud"
-  duration: 168h
-  renewBefore: 24h
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer

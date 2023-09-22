@@ -62,6 +62,8 @@ asdf install
 - https://engineering.deptagency.com/best-practices-for-terraform-aws-tags
 - https://dnschecker.org/
 - https://aws.amazon.com/blogs/apn/simplify-and-secure-terraform-workflows-on-aws-with-dynamic-provider-credentials/
+- https://stackoverflow.com/questions/63346728/issuing-certificate-as-secret-does-not-exist
+- https://cert-manager.io/docs/configuration/acme/
 
 ## ➤ Versioning <a name="#-versioning"></a>
 
