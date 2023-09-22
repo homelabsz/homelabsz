@@ -7,5 +7,3 @@ releases:
 - name: app-of-apps
   namespace: argocd
   chart: ./1-bootstrap/app-of-apps
-  createNamespace: true
-
