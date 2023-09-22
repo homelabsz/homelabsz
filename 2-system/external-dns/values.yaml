@@ -3,7 +3,7 @@ external-dns:
   policy: sync
   sources: ["ingress", "service"]
   provider: cloudflare
-  domainFilters: ["lpsm.dev"]
+  domainFilters: ["lpsm.cloud"]
   extraArgs:
     - --cloudflare-proxied
   env:
