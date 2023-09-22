@@ -47,8 +47,3 @@ resource "rancher2_namespace" "external_secrets" {
   name       = "external-secrets"
   project_id = data.rancher2_project.system.id
 }
-
-resource "rancher2_namespace" "origin_ca_issuer" {
-  name       = "origin-ca-issuer"
-  project_id = data.rancher2_project.system.id
-}

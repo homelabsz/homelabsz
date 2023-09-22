@@ -151,8 +151,8 @@ resource "tfe_workspace" "integrations_ssh_keys_gitops" {
   }
 }
 
-resource "tfe_workspace" "integrations_rancher_add_cluster" {
-  name         = "setup-integrations-rancher-add-cluster"
+resource "tfe_workspace" "integrations_gitlab_management" {
+  name         = "setup-integrations-gitlab-management"
   organization = data.tfe_organization.this.name
   project_id   = tfe_project.integrations.id
   lifecycle {
@@ -160,10 +160,11 @@ resource "tfe_workspace" "integrations_rancher_add_cluster" {
   }
 }
 
-resource "tfe_workspace" "integrations_gitlab_management" {
-  name         = "setup-integrations-gitlab-management"
+resource "tfe_workspace" "integrations_rancher_add_cluster" {
+  name         = "setup-integrations-rancher-add-cluster"
   organization = data.tfe_organization.this.name
   project_id   = tfe_project.integrations.id
+  execution_mode = "local"
   lifecycle {
     prevent_destroy = true
   }
