@@ -24,3 +24,10 @@ releases:
   createNamespace: true
   needs:
   - scalaway-personal-pocs-services-001/external-secrets/external-secrets-scaleway
+# Setup ArgoCD App of Apps
+- name: app-of-apps
+  namespace: argocd
+  chart: ./1-bootstrap/app-of-apps
+  createNamespace: true
+  needs:
+  - scalaway-personal-pocs-services-001/argocd/argocd

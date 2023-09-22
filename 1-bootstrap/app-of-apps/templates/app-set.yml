@@ -14,7 +14,7 @@ spec:
     targetRevision: {{ $.Values.gitops.revision }}
     path: {{ $app.path }}
   destination:
-    server: {{ $app.server | default "https://caas.nuageit.com.br/k8s/clusters/c-ftp9n" }}
+    server: {{ $app.server }}
     namespace: {{ $app.namespace }}
   syncPolicy:
     automated:

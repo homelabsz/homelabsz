@@ -33,7 +33,7 @@ argo-cd:
   server:
     replicas: 1
     extraArgs:
-    - --insecure
+      - --insecure
     config:
       kustomize.buildOptions: "--enable-alpha-plugins"
       repositories: |
@@ -55,11 +55,13 @@ argo-cd:
         cert-manager.io/cluster-issuer: letsencrypt-production
         cert-manager.io/acme-challenge-type: dns01
       hosts:
-      - argo-cd.lpsm.cloud
-      tls:
-      - hosts:
         - argo-cd.lpsm.cloud
-        secretName: argo-cd-tls
+      paths:
+        - /
+      tls:
+        - hosts:
+            - argo-cd.lpsm.cloud
+          secretName: argo-cd-tls
   repoServer:
     replicas: 1
   applicationSet:
