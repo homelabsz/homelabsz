@@ -51,3 +51,5 @@ argo-cd:
     replicas: 1
   applicationSet:
     enabled: true
+  redis-ha:
+    enabled: false
