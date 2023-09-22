@@ -1,0 +1,11 @@
+---
+helmDefaults:
+  kubeContext: scalaway-personal-pocs-services-001
+---
+releases:
+# Setup ArgoCD App of Apps
+- name: app-of-apps
+  namespace: argocd
+  chart: ./1-bootstrap/app-of-apps
+  createNamespace: true
+

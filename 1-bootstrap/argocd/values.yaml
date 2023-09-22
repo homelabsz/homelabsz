@@ -11,6 +11,16 @@ argo-cd:
       exec.enabled: true
       admin.enabled: true
       timeout.reconciliation: 15s
+      dex.config: |
+        connectors:
+          - type: github
+            id: github
+            name: GitHub
+            config:
+              clientID: $dex-secret:clientID
+              clientSecret: $dex-secret:clientSecret
+              orgs:
+                - name: homelabsz
     rbac:
       create: true
   controller:
@@ -20,7 +30,7 @@ argo-cd:
     extraArgs:
       - --insecure
     config:
-      kustomize.buildOptions: "--enable-alpha-plugins"
+      kustomize.buildOptions: "--enable-alpha-plugins --enable-helm"
       repositories: |
         - type: helm
           name: argo-cd
@@ -49,7 +59,28 @@ argo-cd:
           secretName: argo-cd-tls
   repoServer:
     replicas: 1
+  dex:
+    resources:
+      requests:
+        cpu: 50m
+        memory: 32Mi
+      limits:
+        cpu: 100m
+        memory: 64Mi
   applicationSet:
     enabled: true
-  redis-ha:
-    enabled: false
+    resources:
+      requests:
+        cpu: 100m
+        memory: 64Mi
+      limits:
+        cpu: 200m
+        memory: 128Mi
+  redis:
+    resources:
+      requests:
+        cpu: 100m
+        memory: 64Mi
+      limits:
+        cpu: 200m
+        memory: 128Mi
