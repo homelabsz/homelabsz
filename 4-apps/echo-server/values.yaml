@@ -8,6 +8,7 @@ echo-server:
       cert-manager.io/cluster-issuer: letsencrypt-production
       cert-manager.io/acme-challenge-type: dns01
       external-dns.alpha.kubernetes.io/hostname: echo-server.lpsm.cloud
+      external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
     hosts:
       - host: echo-server.lpsm.cloud
         paths:
