@@ -39,3 +39,12 @@ apps:
   - CreateNamespace=true
   - ServerSideApply=true
   - ApplyOutOfSyncOnly=true
+# Echo-Server
+- name: echo-server
+  server: https://kubernetes.default.svc
+  namespace: demo
+  path: 4-apps/echo-server
+  extraSyncOptions:
+  - CreateNamespace=true
+  - ServerSideApply=true
+  - ApplyOutOfSyncOnly=true
