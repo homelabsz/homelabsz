@@ -29,25 +29,37 @@ argo-cd:
         p, role:org-admin, logs, get, *, allow
         p, role:org-admin, exec, create, */*, allow
   controller:
-    replicas: 2
+    replicas: 1
   server:
-    replicas: 2
+    replicas: 1
     extraArgs:
     - --insecure
     config:
       kustomize.buildOptions: "--enable-alpha-plugins"
+      repositories: |
+        - type: helm
+          name: argo-cd
+          url: https://argoproj.github.io/argo-helm
+        - type: git
+          name: cluster-management
+          url: git@github.com:homelabsz/homelabsz.git
+          insecure: true
+          insecureIgnoreHostKey: true
+          sshPrivateKeySecret:
+            key: sshPrivateKey
+            name: ssh-github-gitops
     ingress:
       enabled: true
       ingressClassName: "nginx"
       annotations:
-        external-dns.alpha.kubernetes.io/hostname: argo-cd.lpsm.dev
+        external-dns.alpha.kubernetes.io/hostname: argo-cd.lpsm.cloud
       hosts:
-      - argo-cd.lpsm.dev
+      - argo-cd.lpsm.cloud
   repoServer:
-    replicas: 2
+    replicas: 1
   applicationSet:
-    replicaCount: 2
+    replicaCount: 1
   dex:
     enabled: false
   redis-ha:
-    enabled: true
+    enabled: false

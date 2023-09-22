@@ -2,7 +2,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5 |
 | <a name="requirement_github"></a> [github](#requirement\_github) | ~> 5.35 |
 | <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | ~> 16.3 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | ~> 2.4 |
@@ -50,16 +50,18 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_access_key"></a> [access\_key](#input\_access\_key) | Scaleway access key | `string` | `""` | no |
 | <a name="input_github_token"></a> [github\_token](#input\_github\_token) | A GitHub OAuth / Personal Access Token | `string` | `""` | no |
 | <a name="input_gitlab_token"></a> [gitlab\_token](#input\_gitlab\_token) | The OAuth2 Token, Project, Group, Personal Access Token or CI Job Token used to connect to GitLab | `string` | `""` | no |
 | <a name="input_organization_id"></a> [organization\_id](#input\_organization\_id) | Scaleway organization ID that will be used as default value for organization-scoped resources | `string` | `""` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | Scaleway project ID that will be used as default value for project-scoped resources | `string` | `""` | no |
 | <a name="input_region"></a> [region](#input\_region) | Scaleway region that will be used as default value for all resources | `string` | `"fr-par"` | no |
+| <a name="input_secret_key"></a> [secret\_key](#input\_secret\_key) | Scaleway secret key | `string` | `""` | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | Scaleway zone that will be used as default value for all resources | `string` | `"fr-par-1"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ssh_key_github"></a> [ssh\_key\_github](#output\_ssh\_key\_github) | Output with some information about SSH Key created to GitHub |
-| <a name="output_ssh_key_gitlab"></a> [ssh\_key\_gitlab](#output\_ssh\_key\_gitlab) | Output with some information about SSH Key created to GitLab |
+| <a name="output_ssh_key_github"></a> [ssh\_key\_github](#output\_ssh\_key\_github) | Output SSH Key created in GitHub |
+| <a name="output_ssh_key_gitlab"></a> [ssh\_key\_gitlab](#output\_ssh\_key\_gitlab) | Output SSH Key created in GitLab |

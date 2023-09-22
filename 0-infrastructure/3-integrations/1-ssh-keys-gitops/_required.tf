@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.3"
+  required_version = "~> 1.5"
   required_providers {
     github = {
       source  = "integrations/github"
@@ -13,13 +13,13 @@ terraform {
       source  = "scaleway/scaleway"
       version = "~> 2.27"
     }
-    tls = {
-      source  = "hashicorp/tls"
-      version = "~> 4.0"
-    }
     local = {
       source  = "hashicorp/local"
       version = "~> 2.4"
+    }
+    tls = {
+      source  = "hashicorp/tls"
+      version = "~> 4.0"
     }
   }
 }

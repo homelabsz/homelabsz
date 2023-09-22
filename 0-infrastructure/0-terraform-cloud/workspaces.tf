@@ -19,36 +19,6 @@ resource "tfe_workspace" "lpsm_cloud" {
   }
 }
 
-# Project Scaleway
-resource "tfe_workspace" "scaleway_account" {
-  name           = "setup-scaleway-account"
-  organization   = data.tfe_organization.this.name
-  project_id     = tfe_project.scaleway.id
-  execution_mode = "local"
-  lifecycle {
-    prevent_destroy = true
-  }
-}
-
-resource "tfe_workspace" "scaleway_kubernetes" {
-  name         = "setup-scaleway-kubernetes"
-  organization = data.tfe_organization.this.name
-  project_id   = tfe_project.scaleway.id
-  execution_mode = "local"
-  lifecycle {
-    prevent_destroy = true
-  }
-}
-
-resource "tfe_workspace" "scaleway_rancher" {
-  name         = "setup-scaleway-instances-rancher"
-  organization = data.tfe_organization.this.name
-  project_id   = tfe_project.scaleway.id
-  lifecycle {
-    prevent_destroy = true
-  }
-}
-
 # Project AWS
 resource "tfe_workspace" "aws_account" {
   name         = "setup-aws-account"
@@ -165,6 +135,65 @@ resource "tfe_workspace" "aws_services_security_hub" {
   organization = data.tfe_organization.this.name
   project_id   = tfe_project.aws.id
   tag_names    = ["cloud-provider", "cloud-services", "security"]
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+# Project Integrations
+resource "tfe_workspace" "integrations_ssh_keys_gitops" {
+  name           = "setup-integrations-ssh-key-gitops"
+  organization   = data.tfe_organization.this.name
+  project_id     = tfe_project.integrations.id
+  execution_mode = "local"
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "tfe_workspace" "integrations_rancher_add_cluster" {
+  name         = "setup-integrations-rancher-add-cluster"
+  organization = data.tfe_organization.this.name
+  project_id   = tfe_project.integrations.id
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "tfe_workspace" "integrations_gitlab_management" {
+  name         = "setup-integrations-gitlab-management"
+  organization = data.tfe_organization.this.name
+  project_id   = tfe_project.integrations.id
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+# Project Scaleway
+resource "tfe_workspace" "scaleway_account" {
+  name           = "setup-scaleway-account"
+  organization   = data.tfe_organization.this.name
+  project_id     = tfe_project.scaleway.id
+  execution_mode = "local"
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "tfe_workspace" "scaleway_kubernetes" {
+  name           = "setup-scaleway-kubernetes"
+  organization   = data.tfe_organization.this.name
+  project_id     = tfe_project.scaleway.id
+  execution_mode = "local"
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "tfe_workspace" "scaleway_rancher" {
+  name         = "setup-scaleway-instances-rancher"
+  organization = data.tfe_organization.this.name
+  project_id   = tfe_project.scaleway.id
   lifecycle {
     prevent_destroy = true
   }

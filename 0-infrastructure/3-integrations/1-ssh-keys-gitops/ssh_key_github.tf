@@ -1,3 +1,4 @@
+# Gen SSH Key
 resource "tls_private_key" "ssh_key_github" {
   algorithm = "ED25519"
 }
@@ -13,11 +14,13 @@ resource "local_file" "ssh_key_github_public_pem" {
   content  = tls_private_key.ssh_key_github.public_key_openssh
 }
 
+# Add to GitHub
 resource "github_user_ssh_key" "gitops" {
   title = "GitOps GitHub ArgoCD SSH-Key"
   key   = tls_private_key.ssh_key_github.public_key_openssh
 }
 
+# Store in Scaleway Secrets Manager
 resource "scaleway_secret" "ssh_key_github_private" {
   name        = "ssh_key_github_private"
   description = "GitOps GitHub ArgoCD SSH-Key private"

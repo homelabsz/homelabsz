@@ -1,3 +1,4 @@
+# Gen SSH Key
 resource "tls_private_key" "ssh_key_giltab" {
   algorithm = "ED25519"
 }
@@ -13,6 +14,7 @@ resource "local_file" "ssh_key_gitlab_public_pem" {
   content  = tls_private_key.ssh_key_giltab.public_key_openssh
 }
 
+# Add to GitHub
 data "gitlab_group" "homelabsz" {
   full_path = "homelabsz"
 }
@@ -30,6 +32,7 @@ resource "gitlab_deploy_key" "gitops" {
   key     = tls_private_key.ssh_key_giltab.public_key_openssh
 }
 
+# Store in Scaleway Secrets Manager
 resource "scaleway_secret" "ssh_key_gitlab_private" {
   name        = "ssh_key_gitlab_private"
   description = "GitOps GitLab ArgoCD SSH-Key private"
