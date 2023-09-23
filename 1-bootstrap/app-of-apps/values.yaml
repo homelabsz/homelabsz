@@ -30,6 +30,15 @@ apps:
   - CreateNamespace=true
   - ServerSideApply=true
   - ApplyOutOfSyncOnly=true
+# External Secrets - Cluster Secret Store
+- name: cluster-secret-store
+  namespace: external-secrets
+  server: https://kubernetes.default.svc
+  path: 2-system/security/cluster-secret-store
+  extraSyncOptions:
+  - CreateNamespace=true
+  - ServerSideApply=true
+  - ApplyOutOfSyncOnly=true
 # Cert Manager
 - name: cert-manager
   namespace: cert-manager

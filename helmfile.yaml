@@ -11,15 +11,15 @@ repositories:
   url: https://kubernetes.github.io/ingress-nginx
 ---
 releases:
-# Setup Network
+# Ingress Nginx
 - name: ingress-nginx
   namespace: ingress-nginx
   chart: ./2-system/network/ingress-nginx
-# Setup External Secrets
+# External Secrets
 - name: external-secrets
   namespace: external-secrets
   chart: ./2-system/security/external-secrets
-# Setup Certificates
+# Cert Manager
 - name: cert-manager
   namespace: cert-manager
   chart: ./2-system/network/cert-manager
