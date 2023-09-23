@@ -23,3 +23,9 @@ variable "region" {
   type        = string
   default     = "ap-sydney-1"
 }
+
+variable "compartment_id" {
+  description = "OCI Compartment ID"
+  type        = string
+  sensitive   = true
+}

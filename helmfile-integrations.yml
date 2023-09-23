@@ -10,11 +10,11 @@ releases:
 # Setup External Secrets - Cluster Secret Store
 - name: cluster-secret-store
   namespace: external-secrets
-  chart: ./2-system/cluster-secret-store
+  chart: ./2-system/security/cluster-secret-store
 # Setup Cert-Manager - Cluster Issuer + Certificate
 - name: cluster-issuers
   namespace: cert-manager
-  chart: ./2-system/cluster-issuers
+  chart: ./2-system/network/cluster-issuers
 # Setup ArgoCD
 - name: argocd
   namespace: argocd

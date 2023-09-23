@@ -16,7 +16,7 @@ apps:
 - name: ingress-nginx
   namespace: ingress-nginx
   server: https://kubernetes.default.svc
-  path: 2-system/ingress-nginx
+  path: 2-system/network/ingress-nginx
   extraSyncOptions:
   - CreateNamespace=true
   - ServerSideApply=true
@@ -25,7 +25,7 @@ apps:
 - name: external-secrets
   namespace: external-secrets
   server: https://kubernetes.default.svc
-  path: 2-system/external-secrets
+  path: 2-system/security/external-secrets
   extraSyncOptions:
   - CreateNamespace=true
   - ServerSideApply=true
@@ -34,7 +34,7 @@ apps:
 - name: cert-manager
   namespace: cert-manager
   server: https://kubernetes.default.svc
-  path: 2-system/cert-manager
+  path: 2-system/network/cert-manager
   extraSyncOptions:
   - CreateNamespace=true
   - ServerSideApply=true
@@ -43,32 +43,40 @@ apps:
 - name: external-dns
   namespace: external-dns
   server: https://kubernetes.default.svc
-  path: 2-system/external-dns
+  path: 2-system/network/external-dns
   extraSyncOptions:
   - CreateNamespace=true
   - ServerSideApply=true
   - ApplyOutOfSyncOnly=true
 # Reloader
 - name: reloader
-  server: https://kubernetes.default.svc
   namespace: reloader
+  server: https://kubernetes.default.svc
   path: 2-system/reloader
   extraSyncOptions:
   - CreateNamespace=true
   - ServerSideApply=true
   - ApplyOutOfSyncOnly=true
+# Descheduler
+- name: descheduler
+  namespace: kube-system
+  server: https://kubernetes.default.svc
+  path: 2-system/descheduler
+  extraSyncOptions:
+  - ServerSideApply=true
+  - ApplyOutOfSyncOnly=true
 # Priority Class
 - name: priority-class
+  namespace: kube-system
   server: https://kubernetes.default.svc
   path: 2-system/priority-class
   extraSyncOptions:
-  - CreateNamespace=true
   - ServerSideApply=true
   - ApplyOutOfSyncOnly=true
 # Echo-Server
 - name: echo-server
-  server: https://kubernetes.default.svc
   namespace: demo
+  server: https://kubernetes.default.svc
   path: 4-apps/echo-server
   extraSyncOptions:
   - CreateNamespace=true
