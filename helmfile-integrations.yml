@@ -11,7 +11,7 @@ releases:
 - name: cluster-secret-store
   namespace: external-secrets
   chart: ./2-system/security/cluster-secret-store
-# Cert-Manager - Cluster Issuer + Certificate
+# Cert Manager - Cluster Issuer + Certificate
 - name: cluster-issuers
   namespace: cert-manager
   chart: ./2-system/network/cluster-issuers

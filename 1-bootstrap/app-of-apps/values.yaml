@@ -48,6 +48,15 @@ apps:
   - CreateNamespace=true
   - ServerSideApply=true
   - ApplyOutOfSyncOnly=true
+# Cert-Manager - Cluster Issuer + Certificate
+- name: cluster-issuers
+  namespace: cert-manager
+  server: https://kubernetes.default.svc
+  path: 2-system/network/cluster-issuers
+  extraSyncOptions:
+  - CreateNamespace=true
+  - ServerSideApply=true
+  - ApplyOutOfSyncOnly=true
 # External DNS
 - name: external-dns
   namespace: external-dns
