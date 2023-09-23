@@ -2,7 +2,7 @@ resource "scaleway_instance_ip" "rancher" {}
 
 resource "scaleway_instance_server" "rancher" {
   image             = "ubuntu-bionic"
-  type              = "DEV1-S"
+  type              = "DEV1-L"
   name              = "rancher-server"
   security_group_id = scaleway_instance_security_group.rancher.id
   ip_id             = scaleway_instance_ip.rancher.id
