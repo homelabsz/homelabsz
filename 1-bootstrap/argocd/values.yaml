@@ -8,29 +8,12 @@ argo-cd:
       level: info
   configs:
     cm:
-      exec.enabled: true
-      admin.enabled: true
-      timeout.reconciliation: 15s
-      dex.config: |
-        connectors:
-          - type: github
-            id: github
-            name: GitHub
-            config:
-              clientID: $dex-secret:clientID
-              clientSecret: $dex-secret:clientSecret
-              orgs:
-                - name: homelabsz
-    rbac:
       create: true
-  controller:
-    replicas: 1
-  server:
-    replicas: 1
-    extraArgs:
-      - --insecure
-    config:
-      kustomize.buildOptions: "--enable-alpha-plugins --enable-helm"
+      url: https://argo-cd.lpsm.cloud
+      exec.enabled: true
+      admin.enabled: false
+      timeout.reconciliation: 15s
+      users.anonymous.enabled: false
       repositories: |
         - type: git
           name: cluster-management
@@ -40,6 +23,28 @@ argo-cd:
           sshPrivateKeySecret:
             key: ssh_key_github_private
             name: ssh-github-gitops
+      dex.config: |
+        connectors:
+          - type: github
+            id: github
+            name: GitHub
+            config:
+              clientID: $dex-secret:clientID
+              clientSecret: $dex-secret:clientSecret
+              redirectURI: https://argo-cd.lpsm.cloud/api/dex/callback
+              orgs:
+                - name: homelabsz
+    rbac:
+      create: true
+      policy.default: role:readonly
+      policy.csv: |
+        g, homelabsz:devops, role:admin
+  controller:
+    replicas: 1
+  server:
+    replicas: 1
+    extraArgs:
+      - --insecure
     ingress:
       enabled: true
       ingressClassName: "nginx"
