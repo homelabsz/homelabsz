@@ -1,0 +1,13 @@
+---
+aws:
+  enabled: false
+  region: "us-east-1"
+
+gcp:
+  enabled: false
+  projectId: "keos-sales-stg"
+
+scaleway:
+  enabled: true
+  region: "fr-par"
+  projectId: "461c0125-c3d7-43ee-99d1-1fb983dd1fcf"

@@ -15,14 +15,12 @@ releases:
 - name: ingress-nginx
   namespace: ingress-nginx
   chart: ./2-system/ingress-nginx
-  createNamespace: true
 # Setup External Secrets
 - name: external-secrets
   namespace: external-secrets
   chart: ./2-system/external-secrets
-  createNamespace: true
 # Setup Certificates
 - name: cert-manager
   namespace: cert-manager
   chart: ./2-system/cert-manager
-  createNamespace: true
+

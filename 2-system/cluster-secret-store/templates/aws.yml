@@ -1,4 +1,5 @@
 ---
+{{- if .Values.aws.enabled }}
 apiVersion: external-secrets.io/v1beta1
 kind: ClusterSecretStore
 metadata:
@@ -13,3 +14,4 @@ spec:
           serviceAccountRef:
             name: aws-secrets-accessor
             namespace: default
+{{- end -}}

@@ -7,18 +7,15 @@ repositories:
   url: https://argoproj.github.io/argo-helm
 ---
 releases:
-# Setup External Secrets
-- name: external-secrets-scaleway
+# Setup External Secrets - Cluster Secret Store
+- name: cluster-secret-store
   namespace: external-secrets
-  chart: ./2-system/external-secrets-scaleway
-  createNamespace: true
-# Setup Certificates
+  chart: ./2-system/cluster-secret-store
+# Setup Cert-Manager - Cluster Issuer + Certificate
 - name: cluster-issuers
   namespace: cert-manager
   chart: ./2-system/cluster-issuers
-  createNamespace: true
 # Setup ArgoCD
 - name: argocd
   namespace: argocd
   chart: ./1-bootstrap/argocd
-  createNamespace: true

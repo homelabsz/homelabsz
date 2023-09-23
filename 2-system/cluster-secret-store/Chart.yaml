@@ -1,6 +1,6 @@
 ---
 apiVersion: v2
-name: external-secrets-gcp
+name: cluster-secret-store
 description: A helm chart for an app
 type: application
 version: 0.1.0

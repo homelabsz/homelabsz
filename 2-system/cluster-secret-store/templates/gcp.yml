@@ -1,4 +1,5 @@
 ---
+{{- if .Values.gcp.enabled }}
 apiVersion: external-secrets.io/v1beta1
 kind: ClusterSecretStore
 metadata:
@@ -13,3 +14,4 @@ spec:
             name: gcp-secrets-accessor
             namespace: default
             key: secret-access-credentials
+{{- end -}}
