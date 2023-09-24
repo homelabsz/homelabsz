@@ -50,14 +50,14 @@ asdf install
 
 ## ➤ Ideas <a name="#-ideas"></a>
 
-- Terraform to set up the network on Scaleway
-- Terraform to set up DNS zone, DNS records, firewall rules and others in Cloudflare
+- Terraform to configure the network in Scaleway
+- Terraform to configure the DNS zone, DNS records, firewall rules and more in Cloudflare
 - Terraform to create a Scaleway Kubernetes kapsule
 - Terraform to configure IAM rules to integrate external secrets and secrets manager into Scaleway
 - Terraform to create SSH keys used to access Scaleway instances
-- Terraform to create a Scaleway Rancher Instance
-- Terraform to create Rancher cluster, Rancher projects and Rancher namespaces
-- Terraform to setup SSH keys for GitOps process in GitHub and GitLab
+- Terraform to create a Scaleway Rancher instance
+- Terraform to create Rancher clusters, Rancher projects and Rancher namespaces
+- Terraform to configure SSH keys for the GitOps process on GitHub and GitLab
 - Terraform to create a GitLab group structure + approval policies
 
 ## ➤ Links <a name="#-links"></a>
