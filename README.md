@@ -71,6 +71,10 @@ asdf install
 - https://aws.amazon.com/blogs/apn/simplify-and-secure-terraform-workflows-on-aws-with-dynamic-provider-credentials/
 - https://stackoverflow.com/questions/63346728/issuing-certificate-as-secret-does-not-exist
 - https://cert-manager.io/docs/configuration/acme/
+- https://dev.to/stack-labs/
+securing-the-connectivity-between-a-scaleway-kubernetes-kapsule-application-and-scaleway-rdb-database-4g7b
+- https://github.com/kenfdev/rancher-scaleway/blob/master/rancherserver/main.tf
+- https://www.youtube.com/watch?v=TQcKpe13QI8
 
 ## ➤ Versioning <a name="#-versioning"></a>
 
