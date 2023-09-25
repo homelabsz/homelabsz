@@ -59,6 +59,7 @@ asdf install
 - Terraform to create Rancher clusters, Rancher projects and Rancher namespaces
 - Terraform to configure SSH keys for the GitOps process on GitHub and GitLab
 - Terraform to create a GitLab group structure + approval policies
+- Terraform to integrate Rancher + GitHub Oauth
 
 ## ➤ Links <a name="#-links"></a>
 
