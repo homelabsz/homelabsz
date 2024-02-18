@@ -45,9 +45,3 @@ variable "rancher_admin_password" {
   description = "Rancher admin password"
   default     = ""
 }
-
-variable "rancher_server_url" {
-  type        = string
-  description = "Rancher Server URL"
-  default     = ""
-}

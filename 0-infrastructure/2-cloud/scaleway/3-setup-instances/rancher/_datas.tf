@@ -1,3 +1,3 @@
-data "cloudflare_zone" "lpsm_dev" {
+data "cloudflare_zone" "this" {
   name = var.cloudflare_zone_name
 }
