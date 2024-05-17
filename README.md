@@ -107,7 +107,6 @@ Here is what we use in this project:
 
 <details>
 <summary>Tools</summary>
-
 - [AWS CLI](https://docs.aws.amazon.com/cli/)
 - [Devbox](https://www.jetify.com/devbox/docs/)
 - [Direnv](https://github.com/direnv/direnv)
@@ -122,13 +121,13 @@ Here is what we use in this project:
 - [Precommit](https://pre-commit.com/)
 - [Taskfile](https://taskfile.dev/pt-br/)
 - [Yamllint](https://github.com/adrienverge/yamllint)
-
 </details>
 
-**Patterns**
-
+<details>
+<summary>Patterns</summary>
 - [Conventional Commits](https://www.conventionalcommits.org)
 - [Semantic Versioning](https://semver.org/)
+</details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
