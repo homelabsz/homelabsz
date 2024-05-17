@@ -107,7 +107,6 @@ Here is what we use in this project:
 
 <details>
 <summary>Tools</summary>
-<br>
 
 - [AWS CLI](https://docs.aws.amazon.com/cli/)
 - [Devbox](https://www.jetify.com/devbox/docs/)
@@ -127,7 +126,6 @@ Here is what we use in this project:
 
 <details>
 <summary>Patterns</summary>
-<br>
 
 - [Conventional Commits](https://www.conventionalcommits.org)
 - [Semantic Versioning](https://semver.org/)
