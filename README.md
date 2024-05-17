@@ -26,21 +26,104 @@
 
 </div>
 
-# ➤ Getting Started <a name="#-getting-started"></a>
+# ➤ Getting Started
 
-### Setup
+To start developing this project, you need to set up your system properly. Therefore, follow these steps:
 
-To configure your system for the development of this project, follow the steps below:
+## Devbox
 
-- Install [asdf](https://asdf-vm.com/) to manage runtime dependencies.
-- Install runtime dependencies.
+Devbox is a command-line tool that lets you easily create isolated shells for development. You start by defining the list of packages required for your project, and Devbox creates an isolated, reproducible environment with those packages installed.
+
+>>>
+🚨 Warning
+
+Use this option if you don't want to install the tools at system level.
+>>>
+
+Follow these steps to configure your environment:
+
+- Install [devbox](https://www.jetpack.io/devbox/docs/installing_devbox/).
 
 ```bash
-cut -d' ' -f1 .tool-versions | xargs -I{} sh -c 'asdf plugin add "$1"' -- {}
-asdf install
+curl -fsSL https://get.jetpack.io/devbox | bash
 ```
 
-- Run task from the root of the repository to see available commands. We use task in place of make for this project. See [Taskfile.yml](Taskfile.yml) for more information.
+- Execute the following command to generate the temporary environment:
+
+```bash
+devbox shell
+```
+
+If you need more details about this configuration, check the [devbox.json](devbox.json) file. This setting is a global setting that we use. If you want to customize it, feel free.
+
+## Direnv
+
+Direnv is a powerful tool for managing environment variables and securely handling sensitive information such as API keys or credentials within a `.env` file.
+
+>>>
+🚨 Warning
+
+In the `.envrc` file we configure it to load data from a `.env` file. Therefore, when you define your `.env`, `direnv` will load the variables from `.env` into your shell.
+>>>
+
+Follow these steps to configure your environment:
+
+- Go to the [direnv](https://direnv.net/docs/installation.html) documentation and follow the instructions to install it.
+- After installation, create an `.env` file in the root of your project.
+- By default, `direnv` blocks itself from loading the contents of the `.envrc` file into your session as a security precaution when you are creating `.envrc` for the first time or whenever you modify the contents of the `.envrc` file. Run the following command to solve it.
+
+```bash
+direnv allow
+```
+
+By following these steps, you can utilize `direnv` to manage sensitive information securely and ensure that your environment variables are loaded safely whenever you work on your project.
+
+## Task
+
+The `task` tool provides a convenient way to define and manage project-specific tasks, making it easier to automate common scripts and simplifying development workflows.
+
+>>>
+🚨 Warning
+
+We will use `task` instead of `make` for this project.
+>>>
+
+Follow these steps to configure your environment:
+
+- Make sure you have installed the `task` command following the `devbox` configuration steps.
+- Run the `task` command from the root directory of the project to see all the available commands.
+
+If you need more details about each task defined, check the [Taskfile.yaml] file.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# ➤ Tools and Patterns
+
+Here is what we use in this project:
+
+**Tools**
+
+- [AWS CLI](https://docs.aws.amazon.com/cli/)
+- [Devbox](https://www.jetify.com/devbox/docs/)
+- [Direnv](https://github.com/direnv/direnv)
+- [Excalidraw](https://github.com/excalidraw/excalidraw)
+- [Gitleaks](https://github.com/gitleaks/gitleaks)
+- [IaC](https://aws.amazon.com/what-is/iac/)
+  - [Conftest](https://www.conftest.dev/)
+  - [Infracost](https://github.com/infracost/infracost)
+  - [Terragrunt](https://terragrunt.gruntwork.io/)
+  - [TFLint](https://github.com/terraform-linters/tflint)
+  - [Opentofu](https://opentofu.org/)
+- [Precommit](https://pre-commit.com/)
+- [Taskfile](https://taskfile.dev/pt-br/)
+- [Yamllint](https://github.com/adrienverge/yamllint)
+
+**Patterns**
+
+- [Conventional Commits](https://www.conventionalcommits.org)
+- [Semantic Versioning](https://semver.org/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # ➤ Layers <a name="#-layers"></a>
 
