@@ -186,6 +186,9 @@ Ideas to consider for this project:
 
 If you have any reference links that you think are relevant to this documentation, please post them here:
 
+<details>
+<summary>Click here</summary>
+
 - https://forum.gitlab.com/t/deploy-keys-api-needs-admin-access/34814/6
 - https://github.com/databus23/helm-diff
 - https://clienttest.ssllabs.com
@@ -197,6 +200,7 @@ If you have any reference links that you think are relevant to this documentatio
 - https://dev.to/stack-labs/securing-the-connectivity-between-a-scaleway-kubernetes-kapsule-application-and-scaleway-rdb-database-4g7b
 - https://github.com/kenfdev/rancher-scaleway/blob/master/rancherserver/main.tf
 - https://www.youtube.com/watch?v=TQcKpe13QI8
+</details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
