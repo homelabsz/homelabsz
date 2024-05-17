@@ -210,6 +210,8 @@ If you have any problems, [open an issue in this project](https://github.com/hom
 
 Give me a ⭐️ if this project helped you!
 
+<br>
+
 <img alt="gif-footer" src="https://github.com/lpsm-dev/lpsm-dev/blob/main/.github/assets/yoda.gif" width="225"/>
 
 <br>
