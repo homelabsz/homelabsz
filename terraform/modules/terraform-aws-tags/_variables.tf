@@ -4,20 +4,20 @@ variable "client_name" {
   description = "The name of the client"
 }
 
-variable "criticality" {
+variable "aws_criticality" {
   type        = string
   default     = "critical"
-  description = "The criticality of the operation support"
+  description = "The criticality of AWS environment"
   validation {
     condition     = contains(["critical", "high", "medium", "low"], var.criticality)
     error_message = "Valid values for variable criticality are (critical, high, medium, low)."
   }
 }
 
-variable "environment" {
+variable "aws_environment" {
   type        = string
   default     = "production"
-  description = "The name of the environment"
+  description = "The name of AWS environment"
   validation {
     condition     = contains(["develop", "pocs", "production", "sandbox", "stage"], var.environment)
     error_message = "Valid values for variable environment are (develop, pocs, production, sandbox, stage)."

@@ -3,12 +3,12 @@ output "client_name" {
   description = "Normalized client name"
 }
 
-output "criticality" {
-  value       = local.criticality
-  description = "Normalized criticality"
+output "aws_criticality" {
+  value       = local.aws_environment
+  description = "Normalized aws_criticality"
 }
 
-output "environment" {
-  value       = local.environment
-  description = "Normalized environment"
+output "aws_environment" {
+  value       = local.aws_environment
+  description = "Normalized aws_environment"
 }
