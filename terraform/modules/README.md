@@ -31,8 +31,8 @@ A Terraform Module is a container for multiple resources to be used together. It
 
 These are our Terraform modules:
 
-- [terraform-aws-backend](./terraform-aws-backend/) - A Terraform module to set up remote state management with S3 backend for your account.
-- [terraform-labels](./terraform-labels/) - A Terraform module designed to define a consistent naming convention.
+- [terraform-aws-backend](./terraform-aws-backend/): A Terraform module to set up remote state management with S3 backend for your account.
+- [terraform-labels](./terraform-labels/): A Terraform module designed to define a consistent naming convention.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
