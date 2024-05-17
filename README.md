@@ -105,7 +105,8 @@ If you need more details about each task defined, check the [Taskfile.yaml] file
 
 Here is what we use in this project:
 
-**Tools**
+<details>
+<summary>Tools</summary>
 
 - [AWS CLI](https://docs.aws.amazon.com/cli/)
 - [Devbox](https://www.jetify.com/devbox/docs/)
@@ -121,6 +122,8 @@ Here is what we use in this project:
 - [Precommit](https://pre-commit.com/)
 - [Taskfile](https://taskfile.dev/pt-br/)
 - [Yamllint](https://github.com/adrienverge/yamllint)
+
+</details>
 
 **Patterns**
 
