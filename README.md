@@ -165,6 +165,8 @@ One of the premises of this project is to build everything with IaC. So we will 
 # Ideas <a name=""></a>
 
 Ideas to consider for this project:
+<details>
+<summary>Click here</summary>
 
 - [] Terraform to configure the network in Scaleway
 - [] Terraform to configure the DNS zone, DNS records, firewall rules and more in Cloudflare
@@ -176,6 +178,7 @@ Ideas to consider for this project:
 - [] Terraform to configure SSH keys for the GitOps process on GitHub and GitLab
 - [] Terraform to create a GitLab group structure + approval policies
 - [] Terraform to integrate Rancher + GitHub Oauth
+</details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
