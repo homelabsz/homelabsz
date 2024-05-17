@@ -22,7 +22,7 @@ A Terraform Module is a container for multiple resources to be used together. It
 
 >
 > [!CAUTION]
-> **🚨 Read the GUIDELINES before you start developing a new module.**
+> **Read the GUIDELINES before you start developing a new module.**
 >
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
