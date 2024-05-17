@@ -15,8 +15,6 @@
 
 <p>Setup homelab project with Terraform + Kubernetes + Gitops</p>
 
-<details>
-<summary>Summary</summary>
 <p>
   <a href="#getting-started-">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#tools-and-patterns-">Tools and Patterns</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -26,7 +24,6 @@
   <a href="#versioning-">Versioning</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#troubleshooting-">Troubleshooting</a>
 </p>
-</details>
 
 </div>
 
