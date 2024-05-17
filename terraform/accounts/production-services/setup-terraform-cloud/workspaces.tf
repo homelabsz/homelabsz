@@ -161,9 +161,9 @@ resource "tfe_workspace" "integrations_gitlab_management" {
 }
 
 resource "tfe_workspace" "integrations_rancher_add_cluster" {
-  name         = "setup-integrations-rancher-add-cluster"
-  organization = data.tfe_organization.this.name
-  project_id   = tfe_project.integrations.id
+  name           = "setup-integrations-rancher-add-cluster"
+  organization   = data.tfe_organization.this.name
+  project_id     = tfe_project.integrations.id
   execution_mode = "local"
   lifecycle {
     prevent_destroy = true
