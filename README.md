@@ -131,6 +131,8 @@ In this section, we discuss the structure and organization of our project into d
 
 ## 1 - Terraform Layer
 
+One of the premises of this project is to build everything with IaC. So we will be working with Terraform, an Infrastructure as Code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share.
+
 ## 2 - Account Layer
 
 ## 3 - Network Layer
