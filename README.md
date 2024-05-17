@@ -157,16 +157,18 @@ In this section, we discuss the structure and organization of our project into d
 
 # ➤ Ideas <a name="#-ideas"></a>
 
-- Terraform to configure the network in Scaleway
-- Terraform to configure the DNS zone, DNS records, firewall rules and more in Cloudflare
-- Terraform to create a Scaleway Kubernetes kapsule
-- Terraform to configure IAM rules to integrate external secrets and secrets manager into Scaleway
-- Terraform to create SSH keys used to access Scaleway instances
-- Terraform to create a Scaleway Rancher instance
-- Terraform to create Rancher clusters, Rancher projects and Rancher namespaces
-- Terraform to configure SSH keys for the GitOps process on GitHub and GitLab
-- Terraform to create a GitLab group structure + approval policies
-- Terraform to integrate Rancher + GitHub Oauth
+Ideas to consider for this project:
+
+- [] Terraform to configure the network in Scaleway
+- [] Terraform to configure the DNS zone, DNS records, firewall rules and more in Cloudflare
+- [] Terraform to create a Scaleway Kubernetes kapsule
+- [] Terraform to configure IAM rules to integrate external secrets and secrets manager into Scaleway
+- [] Terraform to create SSH keys used to access Scaleway instances
+- [] Terraform to create a Scaleway Rancher instance
+- [] Terraform to create Rancher clusters, Rancher projects and Rancher namespaces
+- [] Terraform to configure SSH keys for the GitOps process on GitHub and GitLab
+- [] Terraform to create a GitLab group structure + approval policies
+- [] Terraform to integrate Rancher + GitHub Oauth
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -208,7 +210,12 @@ Give me a ⭐️ if this project helped you!
 
 <img alt="gif-footer" src="https://github.com/lpsm-dev/lpsm-dev/blob/main/.github/assets/yoda.gif" width="225"/>
 
+<br>
+<br>
+
 Made with 💜 by [me](https://github.com/lpsm-dev) 👋 inspired on [readme-md-generator](https://github.com/kefranabg/readme-md-generator)
+
+Copyright © 2024 Homelabsz
 
 </div>
 
