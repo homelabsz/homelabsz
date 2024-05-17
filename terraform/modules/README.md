@@ -14,10 +14,11 @@
 
 A Terraform Module is a container for multiple resources to be used together. It's a way to package and reuse resource configurations with Terraform.
 
->>>
-[!IMPORTANT]
-
-A well-designed module should facilitate the abstraction of a architectural concept, constructed from the resources offered by providers. Overusing modules can impede the comprehension and maintenance of the overall Terraform configuration. Therefore, it is advisable to exercise moderation in their use.
+>
+> [!IMPORTANT]
+> 
+> A well-designed module should facilitate the abstraction of a architectural concept, constructed from the resources offered by providers. Overusing modules can impede the comprehension and maintenance of the overall Terraform configuration. Therefore, it is advisable to exercise moderation in their use.
+>
 
 **🚨 Read the GUIDELINES before you start developing a new module.**
 >>>
