@@ -26,7 +26,7 @@
 
 </div>
 
-## ➤ Getting Started <a name="#-getting-started"></a>
+# ➤ Getting Started <a name="#-getting-started"></a>
 
 ### Setup
 
@@ -42,13 +42,37 @@ asdf install
 
 - Run task from the root of the repository to see available commands. We use task in place of make for this project. See [Taskfile.yml](Taskfile.yml) for more information.
 
+# ➤ Layers <a name="#-layers"></a>
+
+In this section, we discuss the structure and organization of our project into different layers, each representing a specific aspect. By dividing the system into layers, we can isolate responsibilities, facilitate maintenance, and encourage code reuse. Each layer is described in detail in the following subsections.
+
+## 1 - Terraform Layer
+
+## 2 - Account Layer
+
+## 3 - Network Layer
+
+## 4 - DNS Layer
+
+## 5 - EKS Layer
+
 ### Cluster Components
 
 - ingress-nginx: Provides ingress cluster services.
 - external-dns: Creates DNS entries in Cloud Provider's DNS service.
 - cert-manager: Configured to create TLS certs for all ingress services automatically using LetsEncrypt.
 
-## ➤ Ideas <a name="#-ideas"></a>
+## 6 - Rancher Layer
+
+## 7 - GitOps Layer
+
+## 8 - CI/CD Layer
+
+## 9 - Security Layer
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# ➤ Ideas <a name="#-ideas"></a>
 
 - Terraform to configure the network in Scaleway
 - Terraform to configure the DNS zone, DNS records, firewall rules and more in Cloudflare
@@ -61,7 +85,11 @@ asdf install
 - Terraform to create a GitLab group structure + approval policies
 - Terraform to integrate Rancher + GitHub Oauth
 
-## ➤ Links <a name="#-links"></a>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# ➤ References <a name="#-references"></a>
+
+If you have any reference links that you think are relevant to this documentation, please post them here:
 
 - https://forum.gitlab.com/t/deploy-keys-api-needs-admin-access/34814/6
 - https://github.com/databus23/helm-diff
@@ -71,24 +99,25 @@ asdf install
 - https://aws.amazon.com/blogs/apn/simplify-and-secure-terraform-workflows-on-aws-with-dynamic-provider-credentials/
 - https://stackoverflow.com/questions/63346728/issuing-certificate-as-secret-does-not-exist
 - https://cert-manager.io/docs/configuration/acme/
-- https://dev.to/stack-labs/
-securing-the-connectivity-between-a-scaleway-kubernetes-kapsule-application-and-scaleway-rdb-database-4g7b
+- https://dev.to/stack-labs/securing-the-connectivity-between-a-scaleway-kubernetes-kapsule-application-and-scaleway-rdb-database-4g7b
 - https://github.com/kenfdev/rancher-scaleway/blob/master/rancherserver/main.tf
 - https://www.youtube.com/watch?v=TQcKpe13QI8
 
-## ➤ Versioning <a name="#-versioning"></a>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# ➤ Versioning <a name="#-versioning"></a>
 
 To check the change history, please access the [**CHANGELOG.md**](CHANGELOG.md) file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## ➤ Troubleshooting <a name="#-troubleshooting"></a>
+# ➤ Troubleshooting <a name="#-troubleshooting"></a>
 
 If you have any problems, [open an issue in this project](https://github.com/homelabsz/homelabsz/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## ➤ Show your support <a name="-show-your-support"></a>
+# ➤ Show your support <a name="-show-your-support"></a>
 
 <div align="center">
 
