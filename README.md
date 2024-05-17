@@ -158,7 +158,7 @@ One of the premises of this project is to build everything with IaC. So we will 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Ideas
+# ➤ Ideas <a name=""></a>
 
 Ideas to consider for this project:
 
