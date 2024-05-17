@@ -46,4 +46,4 @@ repos:
   rev: v1.35.1
   hooks:
   - id: yamllint
-    args: [--strict, -c=.gitlab/config/.yamllint.yaml]
+    args: [--strict, -c=.github/config/.yamllint.yaml]

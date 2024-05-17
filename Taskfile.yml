@@ -43,4 +43,4 @@ tasks:
     - sh: which yamllint
       msg: yamllint {{ .PATH_ERROR }}
     cmds:
-    - yamllint -c {{ .TASKFILE_DIR }}/.gitlab/config/.yamllint.yaml .
+    - yamllint -c {{ .TASKFILE_DIR }}/.github/config/.yamllint.yaml .
