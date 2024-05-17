@@ -14,7 +14,7 @@
 
 >
 > [!CAUTION]
-> **Read the GUIDELINES before you start developing a new module.**
+> **Read the GUIDELINES before you start developing a new Terraform Module.**
 >
 
 A Terraform Module is a container for multiple resources to be used together. It's a way to package and reuse resource configurations with Terraform.
