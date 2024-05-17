@@ -3,7 +3,7 @@
 # Usage:
 # - Install with `asdf`: `asdf plugin add task`
 # - List available tasks with: `task --list`
-version: "3"
+version: 3
 
 vars:
   CLEAR: tput reset
@@ -27,20 +27,20 @@ tasks:
 
   clear:
     cmds:
-    - sleep 0.1 && {{.CLEAR}}
+    - sleep 0.1 && {{ .CLEAR }}
 
   gitleaks:
-    desc: Performs secret-detection in git repo using gitleaks
+    desc: Detect secrets in git repo using gitleaks
     preconditions:
-    - sh: "which gitleaks"
-      msg: "gitleaks {{.PATH_ERROR}}"
+    - sh: which gitleaks
+      msg: gitleaks {{ .PATH_ERROR }}
     cmds:
-    - gitleaks detect --verbose .
+    - gitleaks detect --source={{ .TASKFILE_DIR }} --verbose
 
-  infracost:
-    desc: Run infracost cli
+  yamllint:
+    desc: Run a linter for YAML files
     preconditions:
-    - sh: "which infracost"
-      msg: "infracost {{.PATH_ERROR}}"
+    - sh: which yamllint
+      msg: yamllint {{ .PATH_ERROR }}
     cmds:
-    - infracost breakdown --config-file=infracost.yml
+    - yamllint -c {{ .TASKFILE_DIR }}/.gitlab/config/.yamllint.yaml .
