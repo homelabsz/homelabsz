@@ -15,6 +15,8 @@
 
 <p>Setup homelab project with Terraform + Kubernetes + Gitops</p>
 
+<details>
+<summary>Summary</summary>
 <p>
   <a href="#-getting-started-">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tools-and-patterns-">Tools and Patterns</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -24,6 +26,7 @@
   <a href="#-versioning-">Versioning</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-troubleshooting-">Troubleshooting</a>
 </p>
+</details>
 
 </div>
 
@@ -98,7 +101,7 @@ If you need more details about each task defined, check the [Taskfile.yaml] file
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Tools and Patterns <a name="-show-your-support"></a>
+# ➤ Tools and Patterns <a name=""></a>
 
 Here is what we use in this project:
 
@@ -126,7 +129,7 @@ Here is what we use in this project:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Layers <a name="-show-your-support"></a>
+# ➤ Layers <a name=""></a>
 
 In this section, we discuss the structure and organization of our project into different layers, each representing a specific aspect. By dividing the system into layers, we can isolate responsibilities, facilitate maintenance, and encourage code reuse. Each layer is described in detail in the following subsections.
 
@@ -175,7 +178,7 @@ Ideas to consider for this project:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ References <a name="-show-your-support"></a>
+# ➤ References <a name=""></a>
 
 If you have any reference links that you think are relevant to this documentation, please post them here:
 
@@ -193,19 +196,19 @@ If you have any reference links that you think are relevant to this documentatio
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Versioning <a name="-show-your-support"></a>
+# ➤ Versioning <a name=""></a>
 
 To check the change history, please access the [**CHANGELOG.md**](CHANGELOG.md) file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Troubleshooting <a name="-show-your-support"></a>
+# ➤ Troubleshooting <a name=""></a>
 
 If you have any problems, [open an issue in this project](https://github.com/homelabsz/homelabsz/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Show your support <a name="-show-your-support"></a>
+# ➤ Show your support <a name=""></a>
 
 <div align="center">
 
