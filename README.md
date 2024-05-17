@@ -36,6 +36,8 @@ To start developing this project, you need to set up your system properly. There
 
 ## Devbox
 
+<details>
+<summary>Details</summary>
 Devbox is a command-line tool that lets you easily create isolated shells for development. You start by defining the list of packages required for your project, and Devbox creates an isolated, reproducible environment with those packages installed.
 
 >>>
@@ -59,6 +61,7 @@ devbox shell
 ```
 
 If you need more details about this configuration, check the [devbox.json](devbox.json) file. This setting is a global setting that we use. If you want to customize it, feel free.
+<details>
 
 ## Direnv
 
