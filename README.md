@@ -218,7 +218,6 @@ Give me a ⭐️ if this project helped you!
 Made with 💜 by [me](https://github.com/lpsm-dev) 👋 inspired on [readme-md-generator](https://github.com/kefranabg/readme-md-generator)
 
 <br>
-<br>
 
 Copyright © 2024 Homelabsz
 
