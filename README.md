@@ -125,7 +125,7 @@ Here is what we use in this project:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Layers <a name="#-layers"></a>
+# ➤ Layers
 
 In this section, we discuss the structure and organization of our project into different layers, each representing a specific aspect. By dividing the system into layers, we can isolate responsibilities, facilitate maintenance, and encourage code reuse. Each layer is described in detail in the following subsections.
 
@@ -157,7 +157,7 @@ One of the premises of this project is to build everything with IaC. So we will 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Ideas <a name="#-ideas"></a>
+# ➤ Ideas
 
 Ideas to consider for this project:
 
@@ -174,7 +174,7 @@ Ideas to consider for this project:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ References <a name="#-references"></a>
+# ➤ References
 
 If you have any reference links that you think are relevant to this documentation, please post them here:
 
@@ -192,19 +192,19 @@ If you have any reference links that you think are relevant to this documentatio
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Versioning <a name="#-versioning"></a>
+# ➤ Versioning
 
 To check the change history, please access the [**CHANGELOG.md**](CHANGELOG.md) file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Troubleshooting <a name="#-troubleshooting"></a>
+# ➤ Troubleshooting
 
 If you have any problems, [open an issue in this project](https://github.com/homelabsz/homelabsz/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Show your support <a name="-show-your-support"></a>
+# ➤ Show your support
 
 <div align="center">
 
