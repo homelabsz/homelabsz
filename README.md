@@ -26,7 +26,7 @@
 
 </div>
 
-# ➤ Getting Started
+# ➤ Getting Started <a name="-show-your-support"></a>
 
 To start developing this project, you need to set up your system properly. Therefore, follow these steps:
 
@@ -97,7 +97,7 @@ If you need more details about each task defined, check the [Taskfile.yaml] file
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Tools and Patterns
+# ➤ Tools and Patterns <a name="-show-your-support"></a>
 
 Here is what we use in this project:
 
@@ -125,7 +125,7 @@ Here is what we use in this project:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Layers
+# ➤ Layers <a name="-show-your-support"></a>
 
 In this section, we discuss the structure and organization of our project into different layers, each representing a specific aspect. By dividing the system into layers, we can isolate responsibilities, facilitate maintenance, and encourage code reuse. Each layer is described in detail in the following subsections.
 
@@ -157,7 +157,7 @@ One of the premises of this project is to build everything with IaC. So we will 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Ideas
+# ➤ Ideas <a name="-ideas"></a>
 
 Ideas to consider for this project:
 
@@ -174,7 +174,7 @@ Ideas to consider for this project:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ References
+# ➤ References <a name="-show-your-support"></a>
 
 If you have any reference links that you think are relevant to this documentation, please post them here:
 
@@ -192,19 +192,19 @@ If you have any reference links that you think are relevant to this documentatio
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Versioning
+# ➤ Versioning <a name="-show-your-support"></a>
 
 To check the change history, please access the [**CHANGELOG.md**](CHANGELOG.md) file.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Troubleshooting
+# ➤ Troubleshooting <a name="-show-your-support"></a>
 
 If you have any problems, [open an issue in this project](https://github.com/homelabsz/homelabsz/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# ➤ Show your support
+# ➤ Show your support <a name="-show-your-support"></a>
 
 <div align="center">
 
