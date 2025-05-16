@@ -5,8 +5,8 @@ services:
     ports:
       - "8282:80/tcp"
     environment:
-      TZ: 'America/Toronto'
+      TZ: "America/Toronto"
     volumes:
-      - './db:/var/www/html/db'
-      - './logos:/var/www/html/images/uploads/logos'
+      - "./db:/var/www/html/db"
+      - "./logos:/var/www/html/images/uploads/logos"
     restart: unless-stopped
