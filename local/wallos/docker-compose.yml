@@ -1,3 +1,4 @@
+---
 services:
   wallos:
     image: bellamy/wallos:latest
@@ -5,8 +6,19 @@ services:
     ports:
       - "8282:80/tcp"
     environment:
-      TZ: "America/Toronto"
+      TZ: "America/Sao_Paulo"
     volumes:
       - "./db:/var/www/html/db"
       - "./logos:/var/www/html/images/uploads/logos"
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - wallosnet
+
+networks:
+  wallosnet:
+    driver: bridge
